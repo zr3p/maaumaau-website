@@ -1,16 +1,582 @@
 ---
+// src/pages/index.astro
+export const prerender = true;
 
+const pageTitle = "MAAU MAAU - Professional Cat Sitting Services";
+const pageDescription = "We'll spoil your feline while you're away. Professional cat care that feels like a luxury pet spa experience in Manchester & Salford.";
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription}>
+    <meta name="keywords" content="cat sitting, pet care, Manchester, Salford, cat sitter, pet sitting">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maaumaau.co.uk/">
+    <meta property="og:title" content={pageTitle}>
+    <meta property="og:description" content={pageDescription}>
+    <meta property="og:image" content="https://maaumaau.co.uk/cat-less-maau.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maaumaau.co.uk/">
+    <meta property="twitter:title" content={pageTitle}>
+    <meta property="twitter:description" content={pageDescription}>
+    <meta property="twitter:image" content="https://maaumaau.co.uk/cat-less-maau.svg">
+
+    <style>
+        /* Custom Font - Barrio */
+        @font-face {
+            font-family: 'Barrio';
+            src: url('/Barrio-Regular.woff2') format('woff2'),
+                 url('/Barrio-Regular.woff') format('woff'),
+                 url('/Barrio-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Custom Font - Roboto Mono Variable */
+        @font-face {
+            font-family: 'Roboto Mono';
+            src: url('/RobotoMono-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 700;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #f8f6f0;
+            --bg-secondary: #ffffff;
+            --text-primary: #2a2a2a;
+            --text-secondary: #666666;
+            --accent-primary: #2a2a2a;
+            --accent-secondary: #666666;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2a2a2a;
+            --text-primary: #f8f6f0;
+            --text-secondary: #cccccc;
+            --accent-primary: #f8f6f0;
+            --accent-secondary: #cccccc;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .logo {
+            font-family: 'Barrio', cursive;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            background: rgba(248, 246, 240, 0.9);
+        }
+
+        [data-theme="dark"] .nav {
+            background: rgba(26, 26, 26, 0.9);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+            border-radius: 20px;
+            padding: 0.3rem 0.8rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        /* Fixed CTA Button */
+        .fixed-cta {
+            position: fixed;
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%);
+            z-index: 9999;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        .fixed-cta .btn {
+            padding: 1.5rem 0.8rem;
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border: 2px solid var(--text-primary);
+            display: block;
+        }
+
+        .fixed-cta .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 12vw, 10rem);
+            font-weight: 900;
+            line-height: 0.85;
+            margin-bottom: 2rem;
+            letter-spacing: -0.04em;
+            color: var(--text-primary);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+
+        .hero-location {
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: 2px solid var(--text-primary);
+            background: transparent;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        .btn:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--text-primary);
+        }
+
+        /* Cat Illustrations */
+        .cat-illustrations {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background-image: url('/cat-less-maau.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.25;
+            transition: filter 0.3s ease;
+        }
+
+        [data-theme="dark"] .cat-illustrations {
+            filter: invert(1);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .services-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 4rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: var(--bg-primary);
+            border: 2px solid var(--text-primary);
+            padding: 2.5rem;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .service-time {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 0;
+            background: var(--bg-primary);
+            text-align: center;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about h2 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .about p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 0;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact h2 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .contact p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
+
+            .cat-illustrations {
+                opacity: 0.15;
+                background-size: 150% auto;
+            }
+
+            .fixed-cta {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed CTA Button -->
+    <div class="fixed-cta">
+        <a href="#contact" class="btn">START NOW</a>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()">Dark</button>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#" class="logo">MAAU MAAU</a>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="cat-illustrations"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">YOUR CAT'S HOLIDAY STARTS HERE</h1>
+            <p class="hero-subtitle">We'll spoil your feline while you're away. Professional cat care that feels like a luxury pet spa experience.</p>
+            <div class="hero-location">Manchester & Salford</div>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Book Now</a>
+                <a href="#services" class="btn">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <h2>OUR CAT SITTING SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>QUICK VISIT</h3>
+                    <p>Perfect for busy days when your cat needs a check-in and some company.</p>
+                    <div class="service-time">30 minutes</div>
+                    <ul class="service-features">
+                        <li>Food & water refresh</li>
+                        <li>Litter box maintenance</li>
+                        <li>Playtime & cuddles</li>
+                        <li>Health check</li>
+                        <li>Photo updates</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>MORNING & EVENING VISITS</h3>
+                    <p>Comprehensive daily care with two visits to maintain your cat's routine.</p>
+                    <div class="service-time">2 visits per day</div>
+                    <ul class="service-features">
+                        <li>Morning & evening feeding</li>
+                        <li>Extended playtime</li>
+                        <li>Litter maintenance</li>
+                        <li>Medication if needed</li>
+                        <li>Daily photo & text updates</li>
+                        <li>Plant watering</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>OVERNIGHT STAY</h3>
+                    <p>Premium overnight care for cats who need extra attention and companionship.</p>
+                    <div class="service-time">Up to 9 hours</div>
+                    <ul class="service-features">
+                        <li>Overnight companionship</li>
+                        <li>Multiple feeding times</li>
+                        <li>Extended play & cuddle time</li>
+                        <li>Home security presence</li>
+                        <li>Plant & post care</li>
+                        <li>Detailed daily reports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <h2>WHY CHOOSE MAAU MAAU?</h2>
+            <p>We're not just another pet-sitting marketplace. Maau Maau is a dedicated team of cat enthusiasts who understand that every feline has unique needs and personality.</p>
+            <p>Our carefully selected team of professional cat sitters work under one trusted brand, ensuring consistent, high-quality care for your beloved cats.</p>
+            <p>Based in Manchester and Salford, we've built our reputation on reliability, communication, and genuine love for cats.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>READY TO BOOK?</h2>
+            <p>Get in touch today to discuss your cat's needs and schedule a meet & greet.</p>
+            <div class="contact-buttons">
+                <a href="mailto:hello@maaumaau.co.uk" class="btn btn-primary">EMAIL US</a>
+                <a href="https://wa.me/447123456789" class="btn">WHATSAPP CHAT</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = 'Dark';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = 'Light';
+            }
+        }
+
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.2;
+            
+            const catIllustrations = document.querySelector('.cat-illustrations');
+            if (catIllustrations) {
+                catIllustrations.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    </script>
+</body>
 </html>
