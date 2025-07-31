@@ -1,4 +1,7 @@
 ---
+
+import Analytics from '../components/Analytics.astro';
+
 // src/pages/index.astro
 export const prerender = true;
 
@@ -17,7 +20,7 @@ const pageDescription = "We'll spoil your feline while you're away. Professional
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://maaumaau.co.uk/">
+    <meta property="og:url" conatent="https://maaumaau.co.uk/">
     <meta property="og:title" content={pageTitle}>
     <meta property="og:description" content={pageDescription}>
     <meta property="og:image" content="https://maaumaau.co.uk/cat-less-maau.svg">
@@ -29,6 +32,9 @@ const pageDescription = "We'll spoil your feline while you're away. Professional
     <meta property="twitter:description" content={pageDescription}>
     <meta property="twitter:image" content="https://maaumaau.co.uk/cat-less-maau.svg">
 
+    <!-- Add your analytics component here -->
+    <Analytics />
+    
     <style>
         /* Custom Font - Barrio */
         @font-face {
