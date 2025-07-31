@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maaumaau.co.uk/sitemap-index.xml
