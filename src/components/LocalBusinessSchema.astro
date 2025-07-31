@@ -1,0 +1,61 @@
+---
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://maaumaau.co.uk/#business",
+  "name": "MAAU MAAU",
+  "alternateName": "Maau Maau Cat Sitting",
+  "description": "Professional cat sitting services in Manchester and Salford. We'll spoil your feline while you're away with luxury pet care.",
+  "url": "https://maaumaau.co.uk",
+  "telephone": "+44-7123-456789",
+  "email": "hello@maaumaau.co.uk",
+  "logo": "https://maaumaau.co.uk/cat-less-maau.svg",
+  "image": "https://maaumaau.co.uk/cat-less-maau.svg",
+  "priceRange": "££",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Manchester",
+    "addressRegion": "Greater Manchester",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 53.4808,
+    "longitude": -2.2426
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Manchester"
+    },
+    {
+      "@type": "City", 
+      "name": "Salford"
+    }
+  ],
+  "serviceType": "Pet Care Services",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Cat Sitting Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Quick Visit",
+        "description": "30-minute cat check-in with feeding, litter maintenance, and playtime"
+      },
+      {
+        "@type": "Offer", 
+        "name": "Morning & Evening Visits",
+        "description": "Comprehensive daily care with two visits to maintain your cat's routine"
+      },
+      {
+        "@type": "Offer",
+        "name": "Overnight Stay",
+        "description": "Premium overnight care for cats who need extra attention and companionship"
+      }
+    ]
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

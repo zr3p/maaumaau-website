@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
 
 export const prerender = true;
 
@@ -8,6 +9,8 @@ const pageDescription = "We'll spoil your feline while you're away. Professional
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
+    <LocalBusinessSchema />
+
     <!-- Fixed CTA Button -->
     <div class="fixed-cta">
         <a href="#contact" class="btn">START NOW</a>
