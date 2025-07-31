@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+---
+
+<BaseLayout title="Cat Chat Corner | MAAU MAAU">
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="logo">MAAU MAAU</a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <main style="padding: 8rem 2rem 4rem; max-width: 800px; margin: 0 auto;">
+    <h1 style="font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; margin-bottom: 2rem; text-align: center;">Cat Chat Corner</h1>
+    <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 4rem;">Where Manchester's cat stories come to life</p>
+    
+    {posts.map((post) => (
+      <article style="margin: 2rem 0; padding: 2rem; border: 2px solid #2a2a2a;">
+        <h2><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h2>
+        <p>{post.data.description}</p>
+        <time>{post.data.publishDate.toLocaleDateString()}</time>
+      </article>
+    ))}
+  </main>
+</BaseLayout>

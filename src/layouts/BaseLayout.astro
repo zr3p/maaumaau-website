@@ -482,6 +482,121 @@ import Analytics from '../components/Analytics.astro';
                 display: none;
             }
         }
+
+                /* Blog Styles - Add these to BaseLayout.astro <style is:global> section */
+
+        /* Blog Post Layout */
+        .blog-post-main {
+            padding: 8rem 2rem 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-container {
+            width: 100%;
+        }
+
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .blog-hero-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 2px solid var(--text-primary);
+        }
+
+        .blog-post-title {
+            font-family: 'Barrio', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .blog-post-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            display: block;
+            margin-bottom: 3rem;
+        }
+
+        .blog-content {
+            margin: 2rem 0;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        /* Blog Content Markdown Styles */
+        .blog-content h1,
+        .blog-content h2,
+        .blog-content h3 {
+            font-family: 'Barrio', cursive;
+            font-weight: 900;
+            color: var(--text-primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content strong {
+            font-weight: 700;
+        }
+
+        .blog-content a {
+            color: var(--text-primary);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .blog-content a:hover {
+            opacity: 0.7;
+        }
+
+        /* Blog Mobile Responsive */
+        @media (max-width: 768px) {
+            .blog-post-main {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .blog-hero-image {
+                height: 200px;
+            }
+        }
     </style>
 
 <!-- Sitemap discovery -->

@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout 
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.image}
+>
+<!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="logo">MAAU MAAU</a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="blog-post-main">
+    <div class="blog-container">
+      <a href="/blog/" class="back-link">← Back to Blog</a>
+      
+      {post.data.image && (
+        <img src={post.data.image} alt={post.data.title} class="blog-hero-image" />
+      )}
+      
+      <h1 class="blog-post-title">{post.data.title}</h1>
+      <time class="blog-post-date">{post.data.publishDate.toLocaleDateString()}</time>
+      
+      <div class="blog-content">
+        <Content />
+      </div>
+    </div>
+  </main>
+</BaseLayout>
