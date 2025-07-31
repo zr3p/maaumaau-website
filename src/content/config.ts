@@ -12,6 +12,8 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     featured: z.boolean().default(false),
     location: z.string().optional(), // Manchester, Salford, etc.
+    draft: z.boolean().default(false),      // <-- was missing
+    noindex: z.boolean().default(false),    // <-- was missing
   }),
 });
 
