@@ -11,4 +11,4 @@ image: "/blog-images/blog-post-image-test.webp"
 
 This is just a test. Google won't index this because of the `noindex: true` setting.
 
-When you're ready to make real posts, just set `noindex: false` or remove the line.
+When you're ready to make real posts, just set `noindex: false` or remove the line. Some more text
