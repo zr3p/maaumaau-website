@@ -1,5 +1,6 @@
 ---
-// No props needed here unless you want to make it dynamic
+/* Inject current year at build time (no JS) */
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
@@ -13,4 +14,9 @@
     <a href="/terms">Terms</a>
     <a href="/privacy">Privacy</a>
   </nav>
+
+  <!-- Copyright auto-updates each year -->
+  <p class="footer-copy">
+    © 2019–{currentYear} Maau Maau Ltd. All rights reserved.
+  </p>
 </footer>
