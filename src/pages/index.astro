@@ -1,143 +1,168 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LocalBusinessSchema from "../components/LocalBusinessSchema.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Maau Maau",
+  url: "https://maaumaau.co.uk",
+};
 
 export const prerender = true;
 
 const pageTitle = "MAAU MAAU - Professional Cat Sitting Services";
-const pageDescription = "We'll spoil your feline while you're away. Professional cat care that feels like a luxury pet spa experience in Manchester & Salford.";
+const pageDescription =
+  "We'll spoil your feline while you're away. Professional cat care that feels like a luxury pet spa experience in Manchester & Salford.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
-    <LocalBusinessSchema />
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <LocalBusinessSchema />
 
-    <!-- Fixed CTA Button -->
-    <div class="fixed-cta">
-        <a href="#contact" class="btn">START NOW</a>
+  <!-- Fixed CTA Button -->
+  <div class="fixed-cta">
+    <a href="#contact" class="btn">START NOW</a>
+  </div>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()">Dark</button>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="cat-illustrations"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">YOUR CAT'S HOLIDAY STARTS HERE</h1>
+      <p class="hero-subtitle">
+        We'll spoil your feline while you're away. Professional cat care that
+        feels like a luxury pet spa experience.
+      </p>
+      <div class="hero-location">Manchester & Salford</div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Book Now</a>
+        <a href="#services" class="btn">Our Services</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" onclick="toggleTheme()">Dark</button>
-
-    <!-- Navigation -->
-    <nav class="nav">
-        <a href="#" class="logo">MAAU MAAU</a>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="cat-illustrations"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">YOUR CAT'S HOLIDAY STARTS HERE</h1>
-            <p class="hero-subtitle">We'll spoil your feline while you're away. Professional cat care that feels like a luxury pet spa experience.</p>
-            <div class="hero-location">Manchester & Salford</div>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">Book Now</a>
-                <a href="#services" class="btn">Our Services</a>
-            </div>
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="services-container">
+      <h2>OUR CAT SITTING SERVICES</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>QUICK VISIT</h3>
+          <p>
+            Perfect for busy days when your cat needs a check-in and some
+            company.
+          </p>
+          <div class="service-time">30 minutes</div>
+          <ul class="service-features">
+            <li>30 minute visit</li>
+            <li>Food & water refresh</li>
+            <li>Litter box maintenance</li>
+            <li>Playtime & cuddles</li>
+            <li>Photo updates</li>
+          </ul>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="services-container">
-            <h2>OUR CAT SITTING SERVICES</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>QUICK VISIT</h3>
-                    <p>Perfect for busy days when your cat needs a check-in and some company.</p>
-                    <div class="service-time">30 minutes</div>
-                    <ul class="service-features">
-                        <li>30 minute visit</li>
-                        <li>Food & water refresh</li>
-                        <li>Litter box maintenance</li>
-                        <li>Playtime & cuddles</li>
-                        <li>Photo updates</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <h3>MORNING & EVENING VISITS</h3>
-                    <p>Comprehensive daily care with two visits to maintain your cat's routine.</p>
-                    <div class="service-time">2 visits per day</div>
-                    <ul class="service-features">
-                        <li>2 visits per day, 30 minutes each</li>
-                        <li>Morning & evening feeding, we'll arrange times together</li>
-                        <li>Extended playtime</li>
-                        <li>Litter maintenance</li>
-                        <li>Daily photo & text updates</li>
-                        <li>Plant watering</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <h3>OVERNIGHT STAY</h3>
-                    <p>Premium overnight care for cats who need extra attention and companionship.</p>
-                    <div class="service-time">Up to 8 hours</div>
-                    <ul class="service-features">
-                        <li>Overnight companionship</li>
-                        <li>Multiple feeding times</li>
-                        <li>Extended play & cuddle time</li>
-                        <li>Home security presence</li>
-                        <li>Plant watering</li>
-                        <li>Detailed daily reports and photosx</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="service-card">
+          <h3>MORNING & EVENING VISITS</h3>
+          <p>
+            Comprehensive daily care with two visits to maintain your cat's
+            routine.
+          </p>
+          <div class="service-time">2 visits per day</div>
+          <ul class="service-features">
+            <li>2 visits per day, 30 minutes each</li>
+            <li>Morning & evening feeding, we'll arrange times together</li>
+            <li>Extended playtime</li>
+            <li>Litter maintenance</li>
+            <li>Daily photo & text updates</li>
+            <li>Plant watering</li>
+          </ul>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <h2>WHY CHOOSE MAAU MAAU?</h2>
-            <p>We're not just another pet-sitting marketplace. Maau Maau is a dedicated team of cat enthusiasts who understand that every feline has unique needs and personality.</p>
-            <p>Our carefully selected team of professional cat sitters work under one trusted brand, ensuring consistent, high-quality care for your beloved cats.</p>
-            <p>Based in Manchester and Salford, we've built our reputation on reliability, communication, and genuine love for cats.</p>
+        <div class="service-card">
+          <h3>OVERNIGHT STAY</h3>
+          <p>
+            Premium overnight care for cats who need extra attention and
+            companionship.
+          </p>
+          <div class="service-time">Up to 8 hours</div>
+          <ul class="service-features">
+            <li>Overnight companionship</li>
+            <li>Multiple feeding times</li>
+            <li>Extended play & cuddle time</li>
+            <li>Home security presence</li>
+            <li>Plant watering</li>
+            <li>Detailed daily reports and photosx</li>
+          </ul>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2>READY TO BOOK?</h2>
-            <p>Get in touch today to discuss your cat's needs and schedule a meet & greet.</p>
-            <div class="contact-buttons">
-                <a href="mailto:hello@maaumaau.co.uk" class="btn btn-primary">EMAIL US</a>
-                <a href="https://wa.me/447400481571" class="btn">WHATSAPP CHAT</a>
-            </div>
-        </div>
-    </section>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <h2>WHY CHOOSE MAAU MAAU?</h2>
+      <p>
+        We're not just another pet-sitting marketplace. Maau Maau is a dedicated
+        team of cat enthusiasts who understand that every feline has unique
+        needs and personality.
+      </p>
+      <p>
+        Our carefully selected team of professional cat sitters work under one
+        trusted brand, ensuring consistent, high-quality care for your beloved
+        cats.
+      </p>
+      <p>
+        Based in Manchester and Salford, we've built our reputation on
+        reliability, communication, and genuine love for cats.
+      </p>
+    </div>
+  </section>
 
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const themeToggle = document.querySelector('.theme-toggle');
-            
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.removeAttribute('data-theme');
-                themeToggle.textContent = 'Dark';
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                themeToggle.textContent = 'Light';
-            }
-        }
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <h2>READY TO BOOK?</h2>
+      <p>
+        Get in touch today to discuss your cat's needs and schedule a meet &
+        greet.
+      </p>
+      <div class="contact-buttons">
+        <a href="mailto:hello@maaumaau.co.uk" class="btn btn-primary"
+          >EMAIL US</a
+        >
+        <a href="https://wa.me/447400481571" class="btn">WHATSAPP CHAT</a>
+      </div>
+    </div>
+  </section>
 
-        // Scroll effects
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.2;
-            
-            const catIllustrations = document.querySelector('.cat-illustrations');
-            if (catIllustrations) {
-                catIllustrations.style.transform = `translateY(${rate}px)`;
-            }
-        });
-    </script>
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const themeToggle = document.querySelector(".theme-toggle");
+
+      if (body.getAttribute("data-theme") === "dark") {
+        body.removeAttribute("data-theme");
+        themeToggle.textContent = "Dark";
+      } else {
+        body.setAttribute("data-theme", "dark");
+        themeToggle.textContent = "Light";
+      }
+    }
+
+    // Scroll effects
+    window.addEventListener("scroll", () => {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.2;
+
+      const catIllustrations = document.querySelector(".cat-illustrations");
+      if (catIllustrations) {
+        catIllustrations.style.transform = `translateY(${rate}px)`;
+      }
+    });
+  </script>
 </BaseLayout>

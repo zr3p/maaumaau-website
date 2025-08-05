@@ -14,10 +14,34 @@ const {
   keywords = "cat sitting, pet care, Manchester, Salford, cat sitter, pet sitting",
   image = "https://maaumaau.co.uk/cat-less-maau.svg",
   canonicalURL = Astro.url.href,
-  schema,
+  schema: customSchema,
 } = Astro.props;
 
+// ✅ Default schema fallback
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Maau Maau",
+  url: "https://maaumaau.co.uk",
+  description:
+    "Cat sitting in Manchester and Salford. Professional, trusted care for your feline while you’re away.",
+  logo: "https://maaumaau.co.uk/cat-less-maau.svg",
+  sameAs: [
+    "https://www.tiktok.com/@maau.maau.cat.sit",
+    "https://www.instagram.com/maau.maau.cat.sit",
+    "https://www.youtube.com/@maaumaaucatsitting",
+  ],
+};
+
+const schema = customSchema ?? defaultSchema;
+
 import Analytics from "../components/Analytics.astro";
+import Footer from "../components/Footer.astro";
+
+let schemaScript = "";
+if (schema) {
+  schemaScript = `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
 ---
 
 <!doctype html>
@@ -70,13 +94,6 @@ import Analytics from "../components/Analytics.astro";
       crossorigin
     />
 
-    <!-- JSON-LD Schema -->
-    {
-      schema && (
-        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-      )
-    }
-
     <!-- Analytics -->
     <Analytics />
 
@@ -127,6 +144,7 @@ import Analytics from "../components/Analytics.astro";
         color: var(--text-primary);
         transition: all 0.3s ease;
         overflow-x: hidden;
+        padding-top: 100px;
       }
 
       h1,
@@ -618,7 +636,7 @@ import Analytics from "../components/Analytics.astro";
         }
       }
 
-      /* Added with Nyx for footer */
+      /* Footer Added with Nyx for - she chose to use #000 for footer and not the same as BTN's which is  --bg-primary: #1a1a1a; */
       .footer {
         display: flex;
         justify-content: space-between;
@@ -652,6 +670,14 @@ import Analytics from "../components/Analytics.astro";
         display: flex;
         gap: 1.5rem;
       }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
     </style>
 
     <!-- Sitemap discovery -->
@@ -661,8 +687,23 @@ import Analytics from "../components/Analytics.astro";
       title="Sitemap"
       href="/sitemap-index.xml"
     />
+
+    <!-- JSON-LD Schema -->
+    <Fragment set:html={schemaScript} />
   </head>
   <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="#" class="logo">MAAU MAAU</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
     <slot />
+    <Footer />
   </body>
 </html>
