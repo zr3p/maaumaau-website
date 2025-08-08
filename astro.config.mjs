@@ -2,12 +2,12 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
+import tailwind from '@astrojs/tailwind';
+
 export default defineConfig({
   site: 'https://maaumaau.co.uk',
   output: 'static',
-  integrations: [
-    sitemap()
-  ],
+  integrations: [sitemap(), tailwind()],
   build: {
     assets: 'assets'
   },

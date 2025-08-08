@@ -3,12 +3,519 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "Terms and Conditions — MAAU MAAU";
-const description = "Read the terms and conditions of our cat sitting service.";
+const description = "Terms and conditions for Maau Maau Ltd professional cat sitting services in Manchester and Salford.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <main class="container">
-    <h1>Terms content here</h1>
-    <!-- Your terms content here -->
+  <!-- ✅ Tailwind layout: padded, centered, readable -->
+  <main class="prose prose-sm md:prose-base dark:prose-invert max-w-4xl px-6 md:px-8 lg:px-12 py-12 mx-auto">
+    <h1>Terms and Conditions</h1>
+    <p><strong>Maau Maau Ltd</strong></p>
+    <p><strong>Last Updated:</strong> August 6, 2025</p>
+    <hr />
+
+    <section id="introduction">
+      <p>
+        Thank you for choosing Maau Maau Ltd!
+      </p>
+      <p>
+        These Terms and Conditions (the "Terms") constitute a binding legal agreement between you and Maau Maau Ltd, 
+        a company incorporated under the laws of England and Wales with company number [INSERT COMPANY NUMBER] and 
+        registered office at [INSERT REGISTERED ADDRESS] ("Maau Maau," "we," "us," or "our"). The Terms govern your 
+        use of our cat sitting and pet care services, including our website, mobile applications, and any other 
+        services we may offer (collectively, our "Services").
+      </p>
+      <p class="font-bold">
+        BY USING OUR SERVICES, YOU ACCEPT THESE TERMS. IF YOU DO NOT AGREE WITH THESE TERMS, YOU SHOULD NOT USE OUR SERVICES.
+      </p>
+      <p>
+        We reserve the right to modify these Terms at any time. Any changes will be effective immediately when posted 
+        on our website. Your continued use of our Services after posting modified Terms constitutes your acceptance 
+        of the modified Terms.
+      </p>
+    </section>
+
+    <section id="table-of-contents">
+      <h2>Table of Contents</h2>
+      <ol class="list-decimal list-inside space-y-1">
+        <li><a href="#key-terms" class="text-blue-600 hover:text-blue-800">Key Terms</a></li>
+        <li><a href="#nature-of-services" class="text-blue-600 hover:text-blue-800">Nature of Our Services</a></li>
+        <li><a href="#eligibility" class="text-blue-600 hover:text-blue-800">Eligibility</a></li>
+        <li><a href="#bookings" class="text-blue-600 hover:text-blue-800">Bookings and Service Arrangements</a></li>
+        <li><a href="#fees-payment" class="text-blue-600 hover:text-blue-800">Fees and Payment</a></li>
+        <li><a href="#cancellations" class="text-blue-600 hover:text-blue-800">Cancellations and Refunds</a></li>
+        <li><a href="#pet-owner-responsibilities" class="text-blue-600 hover:text-blue-800">Pet Owner Responsibilities</a></li>
+        <li><a href="#emergencies" class="text-blue-600 hover:text-blue-800">Emergency Situations</a></li>
+        <li><a href="#liability" class="text-blue-600 hover:text-blue-800">Liability and Insurance</a></li>
+        <li><a href="#data-protection" class="text-blue-600 hover:text-blue-800">Data Protection and Privacy</a></li>
+        <li><a href="#intellectual-property" class="text-blue-600 hover:text-blue-800">Intellectual Property</a></li>
+        <li><a href="#termination" class="text-blue-600 hover:text-blue-800">Termination</a></li>
+        <li><a href="#complaints" class="text-blue-600 hover:text-blue-800">Complaints and Disputes</a></li>
+        <li><a href="#governing-law" class="text-blue-600 hover:text-blue-800">Governing Law</a></li>
+        <li><a href="#general-provisions" class="text-blue-600 hover:text-blue-800">General Provisions</a></li>
+      </ol>
+    </section>
+
+    <section id="key-terms">
+      <h2>1. Key Terms</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>"Pet Owner"</strong> means a person who owns or is responsible for a cat and books our Services</li>
+        <li><strong>"Cat Sitter"</strong> means a Maau Maau employee or contractor who provides cat sitting services</li>
+        <li><strong>"Services"</strong> means cat sitting, pet care services, and related activities provided by Maau Maau</li>
+        <li><strong>"Booking"</strong> means a confirmed arrangement for cat sitting services</li>
+        <li><strong>"Pet"</strong> means the cat(s) under our care during a Service period</li>
+      </ul>
+    </section>
+
+    <section id="nature-of-services">
+      <h2>2. Nature of Our Services</h2>
+
+      <section id="service-description">
+        <h3>2.1 Service Description</h3>
+        <p>Maau Maau provides professional cat sitting and pet care services including:</p>
+        <ul class="list-disc list-inside">
+          <li>In-home cat sitting and monitoring</li>
+          <li>Feeding and providing fresh water</li>
+          <li>Litter box maintenance</li>
+          <li>Playtime and companionship</li>
+          <li>Basic grooming (brushing, if requested)</li>
+          <li>Administration of medication (if required and agreed upon)</li>
+          <li>Daily photo updates to Pet Owners</li>
+          <li>Emergency care coordination</li>
+        </ul>
+      </section>
+
+      <section id="professional-standards">
+        <h3>2.2 Professional Standards</h3>
+        <p>All our Cat Sitters are:</p>
+        <ul class="list-disc list-inside">
+          <li>DBS checked (where legally required)</li>
+          <li>Trained in cat care and behavior</li>
+          <li>Insured through our comprehensive pet care insurance</li>
+          <li>Committed to providing professional, reliable service</li>
+        </ul>
+      </section>
+
+      <section id="service-limitations">
+        <h3>2.3 Service Limitations</h3>
+        <p>
+          We specialize exclusively in cat care. We do not provide services for other pets unless specifically 
+          agreed upon in writing.
+        </p>
+      </section>
+    </section>
+
+    <section id="eligibility">
+      <h2>3. Eligibility</h2>
+
+      <section id="age-requirements">
+        <h3>3.1 Age Requirements</h3>
+        <p>You must be at least 18 years old to use our Services.</p>
+      </section>
+
+      <section id="legal-compliance">
+        <h3>3.2 Legal Compliance</h3>
+        <p>By using our Services, you certify that:</p>
+        <ul class="list-disc list-inside">
+          <li>You are the legal owner or authorized caretaker of the cat(s)</li>
+          <li>Your cat(s) are vaccinated as required by law</li>
+          <li>You will comply with all applicable laws and regulations</li>
+          <li>You have the right to enter into this agreement</li>
+        </ul>
+      </section>
+
+      <section id="cat-sitter-requirements">
+        <h3>3.3 Cat Sitter Requirements</h3>
+        <p>All Maau Maau cat sitters must:</p>
+        <ul class="list-disc list-inside">
+          <li>Have the legal right to work in the UK (verified through right to work checks)</li>
+          <li>Pass enhanced DBS checks where legally required</li>
+          <li>Complete our professional cat care training program</li>
+          <li>Maintain valid professional indemnity insurance</li>
+          <li>Comply with all applicable employment and immigration laws</li>
+        </ul>
+      </section>
+
+      <section id="cat-requirements">
+        <h3>3.4 Cat Requirements</h3>
+        <p>Your cat(s) must:</p>
+        <ul class="list-disc list-inside">
+          <li>Be in good health (or any health conditions disclosed)</li>
+          <li>Be properly vaccinated according to UK veterinary standards</li>
+          <li>Not pose a danger to our Cat Sitters or other animals</li>
+          <li>Be suitable for the specific Services requested</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="bookings">
+      <h2>4. Bookings and Service Arrangements</h2>
+
+      <section id="booking-process">
+        <h3>4.1 Booking Process</h3>
+        <ul class="list-disc list-inside">
+          <li>All bookings must be made through our official channels (website, phone, or app)</li>
+          <li>A meet-and-greet consultation is required before first-time bookings</li>
+          <li>Services are confirmed only upon receipt of payment and signed service agreement</li>
+        </ul>
+      </section>
+
+      <section id="service-agreement">
+        <h3>4.2 Service Agreement</h3>
+        <p>Each booking includes:</p>
+        <ul class="list-disc list-inside">
+          <li>Specific dates and times of service</li>
+          <li>Detailed care instructions for your cat(s)</li>
+          <li>Emergency contact information</li>
+          <li>Veterinary contact details</li>
+          <li>House access arrangements</li>
+        </ul>
+      </section>
+
+      <section id="property-access">
+        <h3>4.3 Access to Property</h3>
+        <p>
+          You must provide secure, legal access to your property. You are responsible for any costs associated 
+          with lockouts or access issues.
+        </p>
+      </section>
+    </section>
+
+    <section id="fees-payment">
+      <h2>5. Fees and Payment</h2>
+
+      <section id="service-fees">
+        <h3>5.1 Service Fees</h3>
+        <ul class="list-disc list-inside">
+          <li>All fees are clearly displayed on our website and confirmed before booking</li>
+          <li>Prices include VAT where applicable</li>
+          <li>Additional services (medication administration, extra visits) may incur additional charges</li>
+        </ul>
+      </section>
+
+      <section id="payment-terms">
+        <h3>5.2 Payment Terms</h3>
+        <ul class="list-disc list-inside">
+          <li>Payment is required in full at the time of booking</li>
+          <li>We accept major credit/debit cards and bank transfers</li>
+          <li>All prices are in British Pounds (GBP)</li>
+        </ul>
+      </section>
+
+      <section id="late-fees">
+        <h3>5.3 Late Fees</h3>
+        <p>
+          If you fail to collect your cat(s) at the agreed time, additional charges will apply at our standard daily rate.
+        </p>
+      </section>
+    </section>
+
+    <section id="cancellations">
+      <h2>6. Changes, Cancellations and Refunds</h2>
+
+      <section id="booking-changes">
+        <h3>6.1 Changes to Existing Bookings</h3>
+        <p>
+          Changes to confirmed bookings (such as additional visits, medication requirements, or service modifications) 
+          must be requested at least 24 hours in advance and are subject to availability. Additional charges may apply for:
+        </p>
+        <ul class="list-disc list-inside">
+          <li>Extra visits or extended service periods</li>
+          <li>New medication administration requirements</li>
+          <li>Changes requiring additional Cat Sitter training or preparation</li>
+          <li>Last-minute changes requiring schedule adjustments</li>
+        </ul>
+      </section>
+
+      <section id="owner-cancellation">
+        <h3>6.2 Cancellation by Pet Owner</h3>
+        <ul class="list-disc list-inside">
+          <li><strong>More than 48 hours before service:</strong> Full refund minus 10% administrative fee</li>
+          <li><strong>24-48 hours before service:</strong> 50% refund</li>
+          <li><strong>Less than 24 hours or no-show:</strong> No refund unless exceptional circumstances (medical emergencies, family bereavement, or other circumstances at our discretion)</li>
+        </ul>
+      </section>
+
+      <section id="maau-cancellation">
+        <h3>6.3 Cancellation by Maau Maau</h3>
+        <p>If we must cancel due to emergencies or unforeseen circumstances:</p>
+        <ul class="list-disc list-inside">
+          <li>Full refund of all fees paid</li>
+          <li>Best efforts to arrange alternative care provider</li>
+          <li>No liability for consequential damages</li>
+        </ul>
+      </section>
+
+      <section id="force-majeure">
+        <h3>6.4 Weather and Force Majeure</h3>
+        <p>In cases of severe weather or force majeure events, modified cancellation terms may apply at our discretion.</p>
+      </section>
+    </section>
+
+    <section id="pet-owner-responsibilities">
+      <h2>7. Pet Owner Responsibilities</h2>
+
+      <section id="accurate-info">
+        <h3>7.1 Accurate Information</h3>
+        <p>You must provide:</p>
+        <ul class="list-disc list-inside">
+          <li>Complete and accurate information about your cat's health, behavior, and needs</li>
+          <li>Current veterinary contact information</li>
+          <li>Clear care instructions</li>
+          <li>Emergency contact details</li>
+        </ul>
+      </section>
+
+      <section id="health-safety">
+        <h3>7.2 Health and Safety</h3>
+        <ul class="list-disc list-inside">
+          <li>Ensure your cat is healthy at the start of service</li>
+          <li>Disclose any behavioral issues, medical conditions, or special needs</li>
+          <li>Provide all necessary supplies (food, litter, medications)</li>
+          <li>Ensure your property is safe for our Cat Sitters</li>
+        </ul>
+      </section>
+
+      <section id="communication">
+        <h3>7.3 Communication</h3>
+        <ul class="list-disc list-inside">
+          <li>Respond promptly to communications from Maau Maau</li>
+          <li>Inform us immediately of any changes to contact information</li>
+          <li>Be available for emergency situations</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="emergencies">
+      <h2>8. Emergency Situations</h2>
+
+      <section id="medical-emergencies">
+        <h3>8.1 Medical Emergencies</h3>
+        <p>In the event of a medical emergency:</p>
+        <ul class="list-disc list-inside">
+          <li>We will immediately contact you and your designated emergency contact</li>
+          <li>If you cannot be reached, we are authorized to seek appropriate veterinary care</li>
+          <li>You are responsible for all veterinary costs incurred</li>
+          <li>We will use our best judgment to act in your cat's best interests</li>
+        </ul>
+      </section>
+
+      <section id="property-emergencies">
+        <h3>8.2 Property Emergencies</h3>
+        <p>In case of property-related emergencies (break-ins, flooding, etc.), we will:</p>
+        <ul class="list-disc list-inside">
+          <li>Ensure your cat's safety as the first priority</li>
+          <li>Contact you and appropriate authorities</li>
+          <li>Document the situation with photos where appropriate</li>
+        </ul>
+      </section>
+
+      <section id="authorization">
+        <h3>8.3 Authorization</h3>
+        <p>By using our Services, you authorize Maau Maau to:</p>
+        <ul class="list-disc list-inside">
+          <li>Make emergency decisions regarding your cat's welfare</li>
+          <li>Transport your cat to veterinary facilities if necessary</li>
+          <li>Share relevant information with veterinary professionals</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="liability">
+      <h2>9. Liability and Insurance</h2>
+
+      <section id="insurance-coverage">
+        <h3>9.1 Our Insurance Coverage</h3>
+        <p>Maau Maau maintains comprehensive insurance including:</p>
+        <ul class="list-disc list-inside">
+          <li>Public liability insurance (£2 million)</li>
+          <li>Professional indemnity insurance</li>
+          <li>Key holder insurance</li>
+        </ul>
+      </section>
+
+      <section id="liability-limitation">
+        <h3>9.2 Limitation of Liability</h3>
+        <p>Our liability is limited to:</p>
+        <ul class="list-disc list-inside">
+          <li>Direct costs actually incurred</li>
+          <li>Maximum liability of £1,000 per incident unless due to our gross negligence</li>
+          <li>We are not liable for pre-existing health conditions or behavioral issues</li>
+        </ul>
+      </section>
+
+      <section id="owner-insurance">
+        <h3>9.3 Pet Owner Insurance</h3>
+        <p>
+          We strongly recommend you maintain appropriate pet insurance to cover veterinary costs and third-party liability.
+        </p>
+      </section>
+
+      <section id="exclusions">
+        <h3>9.4 Exclusions</h3>
+        <p>We are not liable for:</p>
+        <ul class="list-disc list-inside">
+          <li>Pre-existing health conditions</li>
+          <li>Property damage caused by your cat</li>
+          <li>Losses arising from your failure to provide accurate information</li>
+          <li>Circumstances beyond our reasonable control</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="data-protection">
+      <h2>10. Data Protection and Privacy</h2>
+      <p>
+        We are committed to protecting your privacy in accordance with UK GDPR and the Data Protection Act 2018. 
+        Our full <a href="/privacy" class="text-blue-600 hover:text-blue-800">Privacy Policy</a> is available on our 
+        website and governs how we collect, use, and protect your personal information.
+      </p>
+
+      <section id="info-collection">
+        <h3>10.1 Information We Collect</h3>
+        <ul class="list-disc list-inside">
+          <li>Contact and booking information</li>
+          <li>Pet health and care details</li>
+          <li>Photos and videos for service updates</li>
+          <li>Payment information (processed by third-party providers)</li>
+        </ul>
+      </section>
+
+      <section id="info-use">
+        <h3>10.2 Use of Information</h3>
+        <p>Your information is used only for:</p>
+        <ul class="list-disc list-inside">
+          <li>Providing our Services</li>
+          <li>Communication regarding your booking</li>
+          <li>Emergency situations</li>
+          <li>Legal compliance</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="intellectual-property">
+      <h2>11. Intellectual Property</h2>
+
+      <section id="content-ownership">
+        <h3>11.1 Content Ownership</h3>
+        <p>
+          All photos, videos, and content created during our Services remain our property but may be shared with 
+          you for personal use.
+        </p>
+      </section>
+
+      <section id="marketing-use">
+        <h3>11.2 Marketing Use</h3>
+        <p>
+          You consent to our use of non-identifying photos and testimonials for marketing purposes unless you 
+          specifically opt out.
+        </p>
+      </section>
+    </section>
+
+    <section id="termination">
+      <h2>12. Termination</h2>
+
+      <section id="owner-termination">
+        <h3>12.1 Termination by Pet Owner</h3>
+        <p>
+          You may terminate our Services at any time with appropriate notice according to our cancellation policy.
+        </p>
+      </section>
+
+      <section id="maau-termination">
+        <h3>12.2 Termination by Maau Maau</h3>
+        <p>We reserve the right to terminate Services if:</p>
+        <ul class="list-disc list-inside">
+          <li>Terms and Conditions are breached</li>
+          <li>Payment is not received</li>
+          <li>Safety of our staff or other animals is at risk</li>
+          <li>False information is provided</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="complaints">
+      <h2>13. Complaints and Disputes</h2>
+
+      <section id="complaint-process">
+        <h3>13.1 Complaint Process</h3>
+        <ul class="list-disc list-inside">
+          <li>Contact us within 48 hours of any concern</li>
+          <li>We will investigate and respond within 5 business days</li>
+          <li>Formal complaints should be submitted in writing</li>
+        </ul>
+      </section>
+
+      <section id="resolution">
+        <h3>13.2 Resolution</h3>
+        <p>We are committed to resolving all disputes fairly and may offer:</p>
+        <ul class="list-disc list-inside">
+          <li>Service credits</li>
+          <li>Partial refunds</li>
+          <li>Additional services at no charge</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="governing-law">
+      <h2>14. Governing Law</h2>
+      <p>
+        These Terms are governed by English law. Any disputes will be subject to the exclusive jurisdiction of 
+        the English courts.
+      </p>
+    </section>
+
+    <section id="general-provisions">
+      <h2>15. General Provisions</h2>
+
+      <section id="entire-agreement">
+        <h3>15.1 Entire Agreement</h3>
+        <p>
+          These Terms constitute the entire agreement between you and Maau Maau regarding our Services.
+        </p>
+      </section>
+
+      <section id="severability">
+        <h3>15.2 Severability</h3>
+        <p>
+          If any provision is found unenforceable, the remaining provisions remain in full effect.
+        </p>
+      </section>
+
+      <section id="assignment">
+        <h3>15.3 Assignment</h3>
+        <p>
+          You may not assign your rights under these Terms. We may assign our rights with reasonable notice.
+        </p>
+      </section>
+
+      <section id="waiver">
+        <h3>15.4 Waiver</h3>
+        <p>
+          Our failure to enforce any provision does not constitute a waiver of our right to enforce it later.
+        </p>
+      </section>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Information</h2>
+      <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+        <p><strong>Maau Maau Ltd</strong></p>
+        <p>[INSERT ADDRESS]</p>
+        <p>Email: <a href="mailto:hello@maaumaau.co.uk" class="text-blue-600 hover:text-blue-800">hello@maaumaau.co.uk</a></p>
+        <p>Phone: [INSERT PHONE]</p>
+        <p>Website: <a href="https://maaumaau.co.uk" class="text-blue-600 hover:text-blue-800">maaumaau.co.uk</a></p>
+      </div>
+      <p class="mt-4">
+        For complaints or concerns, please contact us using the above information. We are committed to providing 
+        excellent service and will address any issues promptly and professionally.
+      </p>
+    </section>
+
+    <hr class="my-8" />
+    <p class="text-sm text-gray-600 dark:text-gray-400 italic">
+      These Terms and Conditions are effective as of August 6, 2025 and supersede all previous versions.
+    </p>
   </main>
 </BaseLayout>
