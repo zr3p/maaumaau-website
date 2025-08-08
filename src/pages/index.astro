@@ -24,9 +24,6 @@ const pageDescription =
     <a href="#contact" class="btn">START NOW</a>
   </div>
 
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" onclick="toggleTheme()">Dark</button>
-
   <!-- Hero Section -->
   <section class="hero">
     <div class="cat-illustrations"></div>
@@ -141,19 +138,6 @@ const pageDescription =
   </section>
 
   <script>
-    function toggleTheme() {
-      const body = document.body;
-      const themeToggle = document.querySelector(".theme-toggle");
-
-      if (body.getAttribute("data-theme") === "dark") {
-        body.removeAttribute("data-theme");
-        themeToggle.textContent = "Dark";
-      } else {
-        body.setAttribute("data-theme", "dark");
-        themeToggle.textContent = "Light";
-      }
-    }
-
     // Scroll effects
     window.addEventListener("scroll", () => {
       const scrolled = window.pageYOffset;
