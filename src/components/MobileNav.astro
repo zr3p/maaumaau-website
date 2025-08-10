@@ -1,0 +1,32 @@
+<div>
+<button 
+  id="mobile-menu-btn" 
+  style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; width: 48px; height: 48px; background: var(--bg-primary); border: 2px solid var(--text-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;"
+  aria-label="Open menu"
+>
+  <img src="/cat-menu-icon.svg" style="width: 28px; height: 28px;" alt="Menu">
+</button>
+
+  <div 
+    id="mobile-menu-overlay" 
+    style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg-primary); z-index: 40; transform: translateY(100%); transition: transform 0.3s ease;"
+  >
+    <nav style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 2rem;">
+      <a href="/#services" style="font-size: 2rem; font-weight: bold; color: var(--text-primary);">Services</a>
+      <a href="/#about" style="font-size: 2rem; font-weight: bold; color: var(--text-primary);">About</a>
+      <a href="/blog/" style="font-size: 2rem; font-weight: bold; color: var(--text-primary);">Blog</a>
+      <a href="/#contact" style="font-size: 2rem; font-weight: bold; color: var(--text-primary);">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+const btn = document.getElementById('mobile-menu-btn');
+const overlay = document.getElementById('mobile-menu-overlay');
+let isOpen = false;
+
+btn.addEventListener('click', () => {
+  isOpen = !isOpen;
+  overlay.style.transform = isOpen ? 'translateY(0)' : 'translateY(100%)';
+});
+</script>

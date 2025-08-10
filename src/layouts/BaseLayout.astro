@@ -37,6 +37,7 @@ const schema = customSchema ?? defaultSchema;
 
 import Analytics from "../components/Analytics.astro";
 import Footer from "../components/Footer.astro";
+import MobileNav from "../components/MobileNav.astro";
 
 let schemaScript = "";
 if (schema) {
@@ -700,6 +701,8 @@ if (schema) {
 
     <!-- Theme Toggle Button -->
     <button class="theme-toggle" onclick="toggleTheme()"></button>
+
+    <MobileNav />
 
     <slot />
     <Footer />
