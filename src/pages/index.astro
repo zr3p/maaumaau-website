@@ -1,4 +1,5 @@
 ---
+import Services from '../components/Services.astro';
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LocalBusinessSchema from "../components/LocalBusinessSchema.astro";
 
@@ -41,63 +42,9 @@ const pageDescription =
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <div class="services-container">
-      <h2>OUR CAT SITTING SERVICES</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>QUICK VISIT</h3>
-          <p>
-            Perfect for busy days when your cat needs a check-in and some
-            company.
-          </p>
-          <div class="service-time">30 minutes</div>
-          <ul class="service-features">
-            <li>30 minute visit</li>
-            <li>Food & water refresh</li>
-            <li>Litter box maintenance</li>
-            <li>Playtime & cuddles</li>
-            <li>Photo updates</li>
-          </ul>
-        </div>
+<!-- Services Section -->
 
-        <div class="service-card">
-          <h3>MORNING & EVENING VISITS</h3>
-          <p>
-            Comprehensive daily care with two visits to maintain your cat's
-            routine.
-          </p>
-          <div class="service-time">2 visits per day</div>
-          <ul class="service-features">
-            <li>2 visits per day, 30 minutes each</li>
-            <li>Morning & evening feeding, we'll arrange times together</li>
-            <li>Extended playtime</li>
-            <li>Litter maintenance</li>
-            <li>Daily photo & text updates</li>
-            <li>Plant watering</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <h3>OVERNIGHT STAY</h3>
-          <p>
-            Premium overnight care for cats who need extra attention and
-            companionship.
-          </p>
-          <div class="service-time">Up to 8 hours</div>
-          <ul class="service-features">
-            <li>Overnight companionship</li>
-            <li>Multiple feeding times</li>
-            <li>Extended play & cuddle time</li>
-            <li>Home security presence</li>
-            <li>Plant watering</li>
-            <li>Detailed daily reports and photosx</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+<Services />
 
   <!-- About Section -->
   <section class="about" id="about">

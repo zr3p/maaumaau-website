@@ -1,0 +1,14 @@
+---
+// src/components/ServicePrice.astro
+export interface Props {
+    price: string;
+}
+
+const { price } = Astro.props;
+---
+
+<div
+    class="bg-gray-900 text-white dark:bg-white dark:text-gray-900 px-5 py-3 mt-6 inline-block font-barrio font-black text-xl uppercase tracking-wide"
+>
+    {price}
+</div>
