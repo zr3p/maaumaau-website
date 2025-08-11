@@ -8,19 +8,32 @@ import ServicePrice from "./ServicePrice.astro";
     <div class="services-container">
         <h2>OUR CAT SITTING SERVICES</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <h3>QUICK VISIT</h3>
+            <!-- Quick Visit -->
+            <!-- Smooth hover + theme variables -->
+            <div
+                class="bg-[var(--bg-primary)] border-2 border-[var(--text-primary)] p-10 text-left hover-smooth hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)]"
+            >
+                <!-- Service title styling (was .service-card h3) -->
+                <h3 class="text-[1.5rem] font-black mb-4 tracking-[0.05em]">
+                    QUICK VISIT
+                </h3>
                 <p>
                     Perfect for busy days when your cat needs a check-in and
                     some company.
                 </p>
-                <div class="service-time">30 minutes</div>
-                <ul class="service-features">
-                    <li>30 minute visit</li>
-                    <li>Food & water refresh</li>
-                    <li>Litter box maintenance</li>
-                    <li>Playtime & cuddles</li>
-                    <li>Photo updates</li>
+                <!-- Service time styling (was .service-time) -->
+                <div
+                    class="text-[1.2rem] font-bold mb-6 uppercase tracking-[0.1em]"
+                >
+                    30 minutes
+                </div>
+                <ul class="space-y-2">
+                    <!-- Arrow bullet from feature-li -->
+                    <li class="feature-li">30 minute visit</li>
+                    <li class="feature-li">Food & water refresh</li>
+                    <li class="feature-li">Litter box maintenance</li>
+                    <li class="feature-li">Playtime & cuddles</li>
+                    <li class="feature-li">Photo updates</li>
                 </ul>
                 <ServicePrice price="£11" />
                 <p class="text-sm text-gray-500 dark:text-gray-400 mt-3 italic">
@@ -31,22 +44,33 @@ import ServicePrice from "./ServicePrice.astro";
                 </p>
             </div>
 
-            <div class="service-card">
-                <h3>MORNING & EVENING VISITS</h3>
+            <!-- Morning & Evening Visits -->
+            <div
+                class="bg-[var(--bg-primary)] border-2 border-[var(--text-primary)] p-10 text-left hover-smooth hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)]"
+            >
+                <h3 class="text-[1.5rem] font-black mb-4 tracking-[0.05em]">
+                    MORNING & EVENING VISITS
+                </h3>
                 <p>
                     Comprehensive daily care with two visits to maintain your
                     cat's routine.
                 </p>
-                <div class="service-time">2 visits per day</div>
-                <ul class="service-features">
-                    <li>2 visits per day, 30 minutes each</li>
-                    <li>
+                <div
+                    class="text-[1.2rem] font-bold mb-6 uppercase tracking-[0.1em]"
+                >
+                    2 visits per day
+                </div>
+                <ul class="space-y-2">
+                    <li class="feature-li">
+                        2 visits per day, 30 minutes each
+                    </li>
+                    <li class="feature-li">
                         Morning & evening feeding, we'll arrange times together
                     </li>
-                    <li>Extended playtime</li>
-                    <li>Litter maintenance</li>
-                    <li>Daily photo & text updates</li>
-                    <li>Plant watering</li>
+                    <li class="feature-li">Extended playtime</li>
+                    <li class="feature-li">Litter maintenance</li>
+                    <li class="feature-li">Daily photo & text updates</li>
+                    <li class="feature-li">Plant watering</li>
                 </ul>
                 <ServicePrice price="£18" />
                 <p class="text-sm text-gray-500 dark:text-gray-400 mt-3 italic">
@@ -57,20 +81,31 @@ import ServicePrice from "./ServicePrice.astro";
                 </p>
             </div>
 
-            <div class="service-card">
-                <h3>OVERNIGHT STAY</h3>
+            <!-- Overnight Stay -->
+            <div
+                class="bg-[var(--bg-primary)] border-2 border-[var(--text-primary)] p-10 text-left hover-smooth hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)]"
+            >
+                <h3 class="text-[1.5rem] font-black mb-4 tracking-[0.05em]">
+                    OVERNIGHT STAY
+                </h3>
                 <p>
                     Premium overnight care for cats who need extra attention and
                     companionship.
                 </p>
-                <div class="service-time">Up to 8 hours</div>
-                <ul class="service-features">
-                    <li>Overnight companionship</li>
-                    <li>Multiple feeding times</li>
-                    <li>Extended play & cuddle time</li>
-                    <li>Home security presence</li>
-                    <li>Plant watering</li>
-                    <li>Detailed daily reports and photos</li>
+                <div
+                    class="text-[1.2rem] font-bold mb-6 uppercase tracking-[0.1em]"
+                >
+                    Up to 8 hours
+                </div>
+                <ul class="space-y-2">
+                    <li class="feature-li">Overnight companionship</li>
+                    <li class="feature-li">Multiple feeding times</li>
+                    <li class="feature-li">Extended play & cuddle time</li>
+                    <li class="feature-li">Home security presence</li>
+                    <li class="feature-li">Plant watering</li>
+                    <li class="feature-li">
+                        Detailed daily reports and photos
+                    </li>
                 </ul>
                 <ServicePrice price="£40" />
                 <p class="text-sm text-gray-500 dark:text-gray-400 mt-3 italic">
@@ -81,36 +116,47 @@ import ServicePrice from "./ServicePrice.astro";
                 </p>
             </div>
 
-            <div class="service-card">
-                <h3>EXTRA CARE</h3>
+            <!-- Extra Care -->
+            <div
+                class="bg-[var(--bg-primary)] border-2 border-[var(--text-primary)] p-10 text-left hover-smooth hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)]"
+            >
+                <h3 class="text-[1.5rem] font-black mb-4 tracking-[0.05em]">
+                    EXTRA CARE
+                </h3>
                 <p>
                     Extra layers of puurfection to keep your cat happy while
                     you're away..
                 </p>
-                <div class="service-time">Add-on services</div>
-                <ul class="service-features">
-                    <li>
+                <div
+                    class="text-[1.2rem] font-bold mb-6 uppercase tracking-[0.1em]"
+                >
+                    Add-on services
+                </div>
+                <ul class="space-y-2">
+                    <li class="feature-li">
                         Extended time: £6 per additional 30 minutes (maximum 60
                         minutes extension per visit)
                     </li>
-                    <li>Medication: £4 per cat, per visit</li>
-                    <li>Multiple cats: £4 per additional cat</li>
-                    <li>
+                    <li class="feature-li">
+                        Medication: £4 per cat, per visit
+                    </li>
+                    <li class="feature-li">
+                        Multiple cats: £4 per additional cat
+                    </li>
+                    <li class="feature-li">
                         Early(before 8am) /late visits (after 8pm): £5 surcharge
                     </li>
-                    <li>
+                    <li class="feature-li">
                         Key collection/return: Free pickup/return at the cat
                         sitting location
                     </li>
-                    <p
-                        class="text-sm text-gray-500 dark:text-gray-400 mt-3 italic"
-                    >
-                        *See our <a
-                            href="/pricing"
-                            class="hover:opacity-70 underline">pricing page</a
-                        > for holiday rates and full details
-                    </p>
                 </ul>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3 italic">
+                    *See our <a
+                        href="/pricing"
+                        class="hover:opacity-70 underline">pricing page</a
+                    > for holiday rates and full details
+                </p>
             </div>
         </div>
     </div>

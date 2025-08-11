@@ -1,5 +1,5 @@
 ---
-import Services from '../components/Services.astro';
+import Services from "../components/Services.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LocalBusinessSchema from "../components/LocalBusinessSchema.astro";
 
@@ -20,10 +20,7 @@ const pageDescription =
 <BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <LocalBusinessSchema />
 
-  <!-- Fixed CTA Button -->
-  <div class="fixed-cta">
-    <a href="/#contact" class="btn">START NOW</a>
-  </div>
+  <!-- Fixed CTA Button moved to BaseLayout using Tailwind-->
 
   <!-- Hero Section -->
   <section class="hero">
@@ -42,9 +39,9 @@ const pageDescription =
     </div>
   </section>
 
-<!-- Services Section -->
+  <!-- Services Section -->
 
-<Services />
+  <Services />
 
   <!-- About Section -->
   <section class="about" id="about">

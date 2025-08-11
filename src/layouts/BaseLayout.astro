@@ -35,6 +35,7 @@ const defaultSchema = {
 
 const schema = customSchema ?? defaultSchema;
 
+import "../styles/tailwind.css";
 import Analytics from "../components/Analytics.astro";
 import Footer from "../components/Footer.astro";
 import MobileNav from "../components/MobileNav.astro";
@@ -113,12 +114,6 @@ if (schema) {
         src: url("/RobotoMono-VariableFont_wght.woff2") format("woff2");
         font-weight: 100 700;
         font-style: normal;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
       }
 
       :root {
@@ -245,42 +240,9 @@ if (schema) {
         content: "☀️";
       } */
 
-      [data-theme="dark"] .theme-toggle::before {
+      /*[data-theme="dark"] .theme-toggle::before {
         content: "🌙";
-      }
-
-      /* Fixed CTA Button */
-      .fixed-cta {
-        position: fixed;
-        top: 50%;
-        right: 2rem;
-        transform: translateY(-50%);
-        z-index: 9999;
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
-      }
-
-      .fixed-cta .btn {
-        padding: 1.5rem 0.8rem;
-        background: var(--text-primary);
-        color: var(--bg-primary);
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 0.9rem;
-        letter-spacing: 0.1em;
-        border-radius: 25px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        border: 2px solid var(--text-primary);
-        display: block;
-      }
-
-      .fixed-cta .btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
-        background: var(--bg-primary);
-        color: var(--text-primary);
-      }
+      }*/
 
       /* Hero Section */
       .hero {
@@ -367,7 +329,7 @@ if (schema) {
       /* Cat Illustrations */
       .cat-illustrations {
         position: absolute;
-        width: 100vw;
+        width: 100vw; /* # commented out for now as Nyx suggested ro remove it as not needed but when it was removed, she then said ".cat-illustrations element doesn’t have any intrinsic width from other rules, so 100vw is the thing actually making it visible."  */
         height: 100vh;
         top: 0;
         left: 0;
@@ -411,51 +373,6 @@ if (schema) {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 3rem;
-      }
-
-      .service-card {
-        background: var(--bg-primary);
-        border: 2px solid var(--text-primary);
-        padding: 2.5rem;
-        text-align: left;
-        transition: all 0.3s ease;
-      }
-
-      .service-card:hover {
-        background: var(--text-primary);
-        color: var(--bg-primary);
-      }
-
-      .service-card h3 {
-        font-size: 1.5rem;
-        font-weight: 900;
-        margin-bottom: 1rem;
-        letter-spacing: 0.05em;
-      }
-
-      .service-time {
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-      }
-
-      .service-features {
-        list-style: none;
-      }
-
-      .service-features li {
-        margin-bottom: 0.5rem;
-        padding-left: 1rem;
-        position: relative;
-      }
-
-      .service-features li::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        font-weight: bold;
       }
 
       /* About Section */
@@ -527,7 +444,9 @@ if (schema) {
         }
 
         .hero {
-          padding: 1rem;
+          justify-content: flex-start;
+          padding-top: 8vh; /* baseline for all phones */
+          min-height: 100dvh; /* iOS/Safari fix */
         }
 
         .hero-cta {
@@ -540,26 +459,32 @@ if (schema) {
         }
 
         .cat-illustrations {
-          opacity: 0.15;
-          background-size: 150% auto;
-        }
-
-        .fixed-cta {
-          display: none;
+          opacity: 0.2;
+          background-size: 100% auto;
+          background-repeat: repeat;
+          background-position: top right;
         }
       }
 
-      /* Blog Styles - Add these to BaseLayout.astro <style is:global> section */
+      /* Large phones (Pro/Pro Max) */
+      @media (min-width: 430px) and (max-width: 768px) {
+        .hero {
+          padding-top: 10vh; /* pull heading a touch lower */
+        }
+      }
+
+      /* Tiny phones (SE) */
+      @media (max-width: 375px) {
+        .hero {
+          padding-top: 10vh; /* push heading slightly down */
+        }
+      }
 
       /* Blog Post Layout */
       .blog-post-main {
         padding: 8rem 2rem 4rem;
         max-width: 800px;
         margin: 0 auto;
-      }
-
-      .blog-container {
-        width: 100%;
       }
 
       .back-link {
@@ -665,15 +590,6 @@ if (schema) {
       }
 
       /* Footer styles all removed to Footer.astro with help from DS after CL and Nyx messed it  up! */
-  
-
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 2rem;
-        line-height: 1.6;
-        font-size: 1rem;
-      }
     </style>
 
     <!-- Sitemap discovery -->
@@ -703,6 +619,22 @@ if (schema) {
     <button class="theme-toggle" onclick="toggleTheme()"></button>
 
     <MobileNav />
+
+    <!-- Fixed vertical "Start Now" CTA — desktop only -->
+    <div
+      class="hidden lg:block fixed top-1/2 right-12 -translate-y-1/2 z-[9999]"
+    >
+      <a
+        href="/#contact"
+        class="block [writing-mode:vertical-rl] [text-orientation:mixed]
+           bg-[var(--text-primary)] text-[var(--bg-primary)]
+           border-2 border-[var(--text-primary)] rounded-full
+           font-bold tracking-[0.2em] px-2 py-6 no-underline shadow-lg
+           hover-smooth hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)] hover:shadow-2xl"
+      >
+        START&nbsp;NOW
+      </a>
+    </div>
 
     <slot />
     <Footer />
