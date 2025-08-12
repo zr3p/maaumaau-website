@@ -4,8 +4,8 @@
 
 @layer components {
 
-    /* 
-    feature-li 
+    /*
+    feature-li
     ----------
     Adds a bold arrow before each list item in service features.
     Used in Services.astro <li> elements.
@@ -20,8 +20,8 @@
         @apply absolute left-0 font-bold;
     }
 
-    /* 
-    hover-smooth 
+    /*
+    hover-smooth
     ------------
     Reusable "buttery" transition for hover effects across the site.
     Keeps hover animations consistent for cards, buttons, and links.
@@ -30,5 +30,30 @@
   */
     .hover-smooth {
         @apply transition-colors duration-300 ease-in-out;
+    }
+
+    /*
+    btn
+    ---
+    Base button styling with theme colors.
+    Used throughout site for CTA buttons.
+    Mobile: Fixed 200px width for consistent sizing
+    Desktop: Auto width based on content
+    Replaces old global .btn CSS from BaseLayout.astro
+    */
+    .btn {
+        @apply px-8 py-4 border-2 border-[var(--text-primary)] bg-transparent text-[var(--text-primary)] no-underline font-semibold text-sm uppercase tracking-wider transition-all duration-300 ease-in-out cursor-pointer md:w-auto w-[200px];
+    }
+
+    .btn-primary {
+        @apply bg-[var(--text-primary)] text-[var(--bg-primary)];
+    }
+
+    .btn:hover {
+        @apply bg-[var(--text-primary)] text-[var(--bg-primary)];
+    }
+
+    .btn-primary:hover {
+        @apply bg-transparent text-[var(--text-primary)];
     }
 }
