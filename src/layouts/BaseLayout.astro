@@ -153,53 +153,7 @@ if (schema) {
         font-family: "Barrio", cursive;
       }
 
-      /* Navigation */
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        padding: 1.5rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        backdrop-filter: blur(20px);
-        background: rgba(248, 246, 240, 0.9);
-      }
-
-      [data-theme="dark"] .nav {
-        background: rgba(26, 26, 26, 0.9);
-      }
-
-      .logo {
-        font-size: 1.8rem;
-        font-weight: 900;
-        color: var(--text-primary);
-        text-decoration: none;
-        letter-spacing: -0.02em;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-        align-items: center;
-      }
-
-      .nav-links a {
-        color: var(--text-primary);
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        transition: all 0.3s ease;
-      }
-
-      .nav-links a:hover {
-        opacity: 0.6;
-      }
+      /* Navigation moved to Tailwind at bottom of BL*/
 
       /* .theme-toggle {
         position: fixed;
@@ -573,14 +527,64 @@ if (schema) {
     <Fragment set:html={schemaScript} />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="nav">
-      <a href="/" class="logo">MAAU MAAU</a>
-      <ul class="nav-links">
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#about">About</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/#contact">Contact</a></li>
+    <!-- Navigation - Phase 4: Converted from .nav CSS classes to Tailwind utilities -->
+    <!-- Replaces: .nav, .logo, .nav-links, .nav-links a styles from global CSS -->
+    <!-- Features: Fixed positioning, backdrop blur, dark mode support, responsive design -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-[1000] px-8 py-6 flex justify-between items-center
+            backdrop-blur-[20px] bg-[rgba(248,246,240,0.9)]
+            dark:bg-[rgba(26,26,26,0.9)]"
+    >
+      <!-- Logo: Converted from .logo class -->
+      <!-- font-['Barrio'] applies the custom Barrio font family -->
+      <a
+        href="/"
+        class="text-3xl font-black text-[var(--text-primary)] no-underline
+            tracking-[-0.02em] font-['Barrio']"
+      >
+        MAAU MAAU
+      </a>
+
+      <!-- Navigation Links: Converted from .nav-links and .nav-links a classes -->
+      <!-- Uses existing hover-smooth utility for consistent transitions -->
+      <!-- Hidden on mobile (md:flex), visible on desktop - matches old @media rule -->
+      <ul class="hidden md:flex gap-8 list-none items-center">
+        <li>
+          <a
+            href="/#services"
+            class="text-[var(--text-primary)] no-underline font-medium text-base
+                uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
+          >
+            Services
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#about"
+            class="text-[var(--text-primary)] no-underline font-medium text-base
+                uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="/blog/"
+            class="text-[var(--text-primary)] no-underline font-medium text-base
+                uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
+          >
+            Blog
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#contact"
+            class="text-[var(--text-primary)] no-underline font-medium text-base
+                uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
+          >
+            Contact
+          </a>
+        </li>
       </ul>
     </nav>
 
