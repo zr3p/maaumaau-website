@@ -1,0 +1,612 @@
+---
+// amazing first draft from Claude / SSG that just needs tidying for live on Friday 15th August
+
+// src/pages/pricing.astro - Professional Pricing Page
+// Phase 5.5: Comprehensive pricing breakdown with detailed service information
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Pricing - Professional Cat Sitting Services | MAAU MAAU";
+const pageDescription =
+    "Detailed pricing for professional cat sitting in Manchester & Salford. Quick visits £11, Morning & Evening £18, Overnight stays £40. Volume discounts and holiday rates.";
+
+export const prerender = true;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <!-- Pricing Page - Complete professional implementation -->
+    <!-- Uses expanded service cards with 3-column detailed layout -->
+
+    <main class="py-24 px-8">
+        <!-- Page Header -->
+        <div class="max-w-6xl mx-auto text-center mb-16">
+            <h1
+                class="text-[clamp(2.5rem,8vw,5rem)] font-black leading-[0.9]
+                 mb-6 tracking-[-0.02em] text-[var(--text-primary)]
+                 font-['Barrio']"
+            >
+                TRANSPARENT PRICING
+            </h1>
+            <p
+                class="text-[clamp(1rem,2vw,1.2rem)] text-[var(--text-secondary)]
+                max-w-3xl mx-auto leading-[1.5]"
+            >
+                Professional cat care with no hidden fees. All prices include
+                VAT and cover Manchester & Salford areas. Volume discounts and
+                flexible packages available.
+            </p>
+        </div>
+
+        <!-- Core Services - Expanded Cards -->
+        <div class="max-w-6xl mx-auto mb-20">
+            <h2
+                class="text-[clamp(1.8rem,5vw,3rem)] font-black text-center mb-12
+                 text-[var(--text-primary)] font-['Barrio']"
+            >
+                CORE SERVICES
+            </h2>
+
+            <!-- QUICK VISIT - Expanded -->
+            <div
+                class="bg-[var(--bg-secondary)] border-2 border-[var(--text-primary)]
+                  overflow-hidden mb-6"
+            >
+                <!-- Header -->
+                <div
+                    class="bg-[var(--text-primary)] text-[var(--bg-secondary)]
+                    px-8 py-4"
+                >
+                    <h3
+                        class="text-2xl font-black tracking-[0.05em] font-['Barrio']"
+                    >
+                        QUICK VISIT
+                    </h3>
+                </div>
+
+                <!-- 3 Column Content -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+                    <!-- Column 1: Service Overview -->
+                    <div class="p-6 border-r border-[var(--text-primary)]">
+                        <h4
+                            class="font-bold text-lg mb-3 text-[var(--text-primary)]"
+                        >
+                            Service Overview
+                        </h4>
+                        <p class="mb-4 leading-relaxed">
+                            Perfect for busy days when your cat needs a check-in
+                            and some company. Ideal for working professionals
+                            who want peace of mind knowing their feline friend
+                            is happy and healthy.
+                        </p>
+                        <div
+                            class="bg-[var(--bg-primary)] p-3 rounded border border-[var(--text-primary)]"
+                        >
+                            <div
+                                class="font-bold text-sm uppercase tracking-wider mb-1"
+                            >
+                                Duration
+                            </div>
+                            <div class="text-xl font-black">30 Minutes</div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: What's Included + Examples -->
+                    <div class="p-6 border-r border-[var(--text-primary)]">
+                        <h4
+                            class="font-bold text-lg mb-3 text-[var(--text-primary)]"
+                        >
+                            What's Included
+                        </h4>
+                        <ul class="space-y-2 mb-4">
+                            <li class="feature-li">
+                                Fresh food & water top-up
+                            </li>
+                            <li class="feature-li">
+                                Litter box cleaning & maintenance
+                            </li>
+                            <li class="feature-li">
+                                15-20 minutes interactive playtime
+                            </li>
+                            <li class="feature-li">Cuddles & companionship</li>
+                            <li class="feature-li">
+                                Photo updates sent to you
+                            </li>
+                            <li class="feature-li">Basic health check</li>
+                            <li class="feature-li">
+                                Security check of your home
+                            </li>
+                        </ul>
+                        <div
+                            class="text-sm text-[var(--text-secondary)] italic"
+                        >
+                            <strong>Perfect for:</strong> Single cats, short work
+                            days, weekend check-ins, cats comfortable with shorter
+                            visits
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Pricing & Booking -->
+                    <div class="p-6 bg-[var(--bg-primary)]">
+                        <h4
+                            class="font-bold text-lg mb-3 text-[var(--text-primary)]"
+                        >
+                            Pricing
+                        </h4>
+
+                        <!-- Main Price -->
+                        <div class="text-center mb-4">
+                            <div
+                                class="text-4xl font-black text-[var(--text-primary)] mb-2"
+                            >
+                                £11
+                            </div>
+                            <div class="text-sm text-[var(--text-secondary)]">
+                                per visit
+                            </div>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span>Multiple visits (same day)</span>
+                                <span class="font-bold">£10 each</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Weekly package (5 visits)</span>
+                                <span class="font-bold">£50</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Holiday rate</span>
+                                <span class="font-bold">£13.75</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="mt-6">
+                            <a
+                                href="/#contact"
+                                class="btn btn-primary w-full text-center block"
+                            >
+                                Book Quick Visit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MORNING & EVENING - Expanded -->
+            <div
+                class="bg-[var(--bg-secondary)] border-2 border-[var(--text-primary)]
+                  overflow-hidden mb-6"
+            >
+                <!-- Header -->
+                <div
+                    class="bg-[var(--text-primary)] text-[var(--bg-secondary)]
+                    px-8 py-4"
+                >
+                    <h3
+                        class="text-2xl font-black tracking-[0.05em] font-['Barrio']"
+                    >
+                        MORNING & EVENING VISITS
+                    </h3>
+                </div>
+
+                <!-- 3 Column Content -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+                    <!-- Column 1: Service Overview -->
+                    <div class="p-6 border-r border-[var(--text-primary)]">
+                        <h4
+                            class="font-bold text-lg mb-3 text-[var(--text-primary)]"
+                        >
+                            Service Overview
+                        </h4>
+                        <p class="mb-4 leading-relaxed">
+                            Comprehensive daily care with two visits to maintain
+                            your cat's routine. Perfect for longer trips or cats
+                            who thrive on consistent feeding schedules and
+                            extended human interaction.
+                        </p>
+                        <div
+                            class="bg-[var(--bg-primary)] p-3 rounded border border-[var(--text-primary)]"
+                        >
+                            <div
+                                class="font-bold text-sm uppercase tracking-wider mb-1"
+                            >
+                                Duration
+                            </div>
+                            <div class="text-xl font-black">
+                                2 Visits Per Day
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: What's Included + Examples -->
+                    <div class="p-6 border-r border-[var(--text-primary)]">
+                        <h4
+                            class="font-bold text-lg mb-3 text-[var(--text-primary)]"
+                        >
+                            What's Included
+                        </h4>
+                        <ul class="space-y-2 mb-4">
+                            <li class="feature-li">Morning feeding (7-9am)</li>
+                            <li class="feature-li">Evening feeding (5-7pm)</li>
+                            <li class="feature-li">
+                                Extended playtime sessions
+                            </li>
+                            <li class="feature-li">
+                                Litter maintenance twice daily
+                            </li>
+                            <li class="feature-li">
+                                Daily photo & text updates
+                            </li>
+                            <li class="feature-li">
+                                Plant watering & light housekeeping
+                            </li>
+                            <li class="feature-li">Mail collection</li>
+                            <li class="feature-li">Home security checks</li>
+                        </ul>
+                        <div
+                            class="text-sm text-[var(--text-secondary)] italic"
+                        >
+                            <strong>Perfect for:</strong> Multiple cats, scheduled
+                            feeders, social cats, trips longer than 2 days
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Pricing & Booking -->
+                    <div class="p-6 bg-[var(--bg-primary)]">
+                        <h4
+                            class="font-bold text-lg mb-3 text-[var(--text-primary)]"
+                        >
+                            Pricing
+                        </h4>
+
+                        <!-- Main Price -->
+                        <div class="text-center mb-4">
+                            <div
+                                class="text-4xl font-black text-[var(--text-primary)] mb-2"
+                            >
+                                £18
+                            </div>
+                            <div class="text-sm text-[var(--text-secondary)]">
+                                per day (2 visits)
+                            </div>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span>Weekly rate (7 days)</span>
+                                <span class="font-bold">£120</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Extended trip (14+ days)</span>
+                                <span class="font-bold">£16/day</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Holiday rate</span>
+                                <span class="font-bold">£22.50</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="mt-6">
+                            <a
+                                href="/#contact"
+                                class="btn btn-primary w-full text-center block"
+                            >
+                                Book Daily Visits
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OVERNIGHT STAY - Expanded -->
+            <div
+                class="bg-[var(--bg-secondary)] border-2 border-[var(--text-primary)]
+                  overflow-hidden mb-6"
+            >
+                <!-- Header -->
+                <div
+                    class="bg-[var(--text-primary)] text-[var(--bg-secondary)]
+                    px-8 py-4"
+                >
+                    <h3
+                        class="text-2xl font-black tracking-[0.05em] font-['Barrio']"
+                    >
+                        OVERNIGHT STAY
+                    </h3>
+                </div>
+
+                <!-- 3 Column Content -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+                    <!-- Column 1: Service Overview -->
+                    <div class="p-6 border-r border-[var(--text-primary)]">
+                        <h4
+                            class="font-bold text-lg mb-3 text-[var(--text-primary)]"
+                        >
+                            Service Overview
+                        </h4>
+                        <p class="mb-4 leading-relaxed">
+                            Premium overnight care for cats who need extra
+                            attention and companionship. Your cat sitter stays
+                            in your home providing continuous care, security,
+                            and the comfort of maintaining normal routines.
+                        </p>
+                        <div
+                            class="bg-[var(--bg-primary)] p-3 rounded border border-[var(--text-primary)]"
+                        >
+                            <div
+                                class="font-bold text-sm uppercase tracking-wider mb-1"
+                            >
+                                Duration
+                            </div>
+                            <div class="text-xl font-black">Up to 9 Hours</div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: What's Included + Examples -->
+                    <div class="p-6 border-r border-[var(--text-primary)]">
+                        <h4
+                            class="font-bold text-lg mb-3 text-[var(--text-primary)]"
+                        >
+                            What's Included
+                        </h4>
+                        <ul class="space-y-2 mb-4">
+                            <li class="feature-li">
+                                Overnight companionship (9pm-6am)
+                            </li>
+                            <li class="feature-li">
+                                Multiple feeding times as needed
+                            </li>
+                            <li class="feature-li">
+                                Extended play & cuddle sessions
+                            </li>
+                            <li class="feature-li">Home security presence</li>
+                            <li class="feature-li">
+                                Plant watering & housekeeping
+                            </li>
+                            <li class="feature-li">
+                                Detailed daily reports with photos
+                            </li>
+                            <li class="feature-li">Emergency response 24/7</li>
+                            <li class="feature-li">Mail & package handling</li>
+                        </ul>
+                        <div
+                            class="text-sm text-[var(--text-secondary)] italic"
+                        >
+                            <strong>Perfect for:</strong> Anxious cats, senior cats,
+                            medical needs, high-value homes, first-time cat sitting
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Pricing & Booking -->
+                    <div class="p-6 bg-[var(--bg-primary)]">
+                        <h4
+                            class="font-bold text-lg mb-3 text-[var(--text-primary)]"
+                        >
+                            Pricing
+                        </h4>
+
+                        <!-- Main Price -->
+                        <div class="text-center mb-4">
+                            <div
+                                class="text-4xl font-black text-[var(--text-primary)] mb-2"
+                            >
+                                £40
+                            </div>
+                            <div class="text-sm text-[var(--text-secondary)]">
+                                per night
+                            </div>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span>Weekly rate (7 nights)</span>
+                                <span class="font-bold">£270</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Extended stay (14+ nights)</span>
+                                <span class="font-bold">£35/night</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Holiday rate</span>
+                                <span class="font-bold">£50</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="mt-6">
+                            <a
+                                href="/#contact"
+                                class="btn btn-primary w-full text-center block"
+                            >
+                                Book Overnight Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add-on Services Section -->
+        <div class="max-w-6xl mx-auto mb-20">
+            <h2
+                class="text-[clamp(1.8rem,5vw,3rem)] font-black text-center mb-12
+                 text-[var(--text-primary)] font-['Barrio']"
+            >
+                ADD-ON SERVICES & EXTRAS
+            </h2>
+
+            <div
+                class="bg-[var(--bg-secondary)] border-2 border-[var(--text-primary)]
+                  overflow-hidden"
+            >
+                <!-- Header -->
+                <div
+                    class="bg-[var(--text-primary)] text-[var(--bg-secondary)]
+                    px-8 py-4"
+                >
+                    <h3
+                        class="text-2xl font-black tracking-[0.05em] font-['Barrio']"
+                    >
+                        EXTRA CARE & CUSTOMIZATIONS
+                    </h3>
+                </div>
+
+                <!-- Expanded Add-ons Grid -->
+                <div class="p-8">
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    >
+                        <!-- Time Extensions -->
+                        <div class="space-y-4">
+                            <h4
+                                class="font-bold text-lg text-[var(--text-primary)] border-b border-[var(--text-primary)] pb-2"
+                            >
+                                Time Extensions
+                            </h4>
+                            <div class="flex justify-between items-center">
+                                <span>Extra 30 minutes</span>
+                                <span class="font-black text-lg">£6</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Extra 60 minutes</span>
+                                <span class="font-black text-lg">£10</span>
+                            </div>
+                            <div class="text-xs text-[var(--text-secondary)]">
+                                Maximum 60 minutes extension per visit
+                            </div>
+                        </div>
+
+                        <!-- Medical Care -->
+                        <div class="space-y-4">
+                            <h4
+                                class="font-bold text-lg text-[var(--text-primary)] border-b border-[var(--text-primary)] pb-2"
+                            >
+                                Medical Care
+                            </h4>
+                            <div class="flex justify-between items-center">
+                                <span>Medication administration</span>
+                                <span class="font-black text-lg">£4</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Insulin injections</span>
+                                <span class="font-black text-lg">£8</span>
+                            </div>
+                            <div class="text-xs text-[var(--text-secondary)]">
+                                Per cat, per visit. Training certificate
+                                required.
+                            </div>
+                        </div>
+
+                        <!-- Multiple Cats -->
+                        <div class="space-y-4">
+                            <h4
+                                class="font-bold text-lg text-[var(--text-primary)] border-b border-[var(--text-primary)] pb-2"
+                            >
+                                Multiple Cats
+                            </h4>
+                            <div class="flex justify-between items-center">
+                                <span>2nd cat (same household)</span>
+                                <span class="font-black text-lg">£4</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>3+ cats</span>
+                                <span class="font-black text-lg">£3 each</span>
+                            </div>
+                            <div class="text-xs text-[var(--text-secondary)]">
+                                Discount applies to 3rd cat onwards
+                            </div>
+                        </div>
+
+                        <!-- Special Times -->
+                        <div class="space-y-4">
+                            <h4
+                                class="font-bold text-lg text-[var(--text-primary)] border-b border-[var(--text-primary)] pb-2"
+                            >
+                                Special Times
+                            </h4>
+                            <div class="flex justify-between items-center">
+                                <span>Early visits (before 8am)</span>
+                                <span class="font-black text-lg">£5</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Late visits (after 8pm)</span>
+                                <span class="font-black text-lg">£5</span>
+                            </div>
+                            <div class="text-xs text-[var(--text-secondary)]">
+                                Surcharge per visit
+                            </div>
+                        </div>
+
+                        <!-- Key Services -->
+                        <div class="space-y-4">
+                            <h4
+                                class="font-bold text-lg text-[var(--text-primary)] border-b border-[var(--text-primary)] pb-2"
+                            >
+                                Key Services
+                            </h4>
+                            <div class="flex justify-between items-center">
+                                <span>Key collection/return</span>
+                                <span class="font-black text-lg text-green-600"
+                                    >FREE</span
+                                >
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Emergency locksmith</span>
+                                <span class="font-black text-lg"
+                                    >Cost + £15</span
+                                >
+                            </div>
+                            <div class="text-xs text-[var(--text-secondary)]">
+                                Free within 5 miles of visit location
+                            </div>
+                        </div>
+
+                        <!-- Additional Services -->
+                        <div class="space-y-4">
+                            <h4
+                                class="font-bold text-lg text-[var(--text-primary)] border-b border-[var(--text-primary)] pb-2"
+                            >
+                                Additional Services
+                            </h4>
+                            <div class="flex justify-between items-center">
+                                <span>Plant watering (extensive)</span>
+                                <span class="font-black text-lg">£3</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Light housekeeping</span>
+                                <span class="font-black text-lg">£5</span>
+                            </div>
+                            <div class="text-xs text-[var(--text-secondary)]">
+                                Basic tidying, not deep cleaning
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="max-w-4xl mx-auto text-center">
+            <h3
+                class="text-[clamp(1.5rem,4vw,2.5rem)] font-black mb-6
+                 text-[var(--text-primary)] font-['Barrio']"
+            >
+                READY TO BOOK?
+            </h3>
+            <p class="text-lg text-[var(--text-secondary)] mb-8">
+                Get in touch today for a free meet & greet consultation. We'll
+                create a custom care plan for your feline friend.
+            </p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="mailto:hello@maaumaau.co.uk" class="btn btn-primary"
+                    >EMAIL US</a
+                >
+                <a href="/#contact" class="btn">GET QUOTE</a>
+            </div>
+        </div>
+    </main>
+</BaseLayout>

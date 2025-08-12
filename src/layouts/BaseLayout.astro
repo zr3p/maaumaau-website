@@ -198,58 +198,7 @@ if (schema) {
         content: "🌙";
       }*/
 
-      /* Hero Section */
-      .hero {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-        position: relative;
-      }
-
-      .hero-content {
-        max-width: 900px;
-        z-index: 2;
-      }
-
-      .hero-title {
-        font-size: clamp(3rem, 12vw, 10rem);
-        font-weight: 900;
-        line-height: 0.85;
-        margin-bottom: 2rem;
-        letter-spacing: -0.04em;
-        color: var(--text-primary);
-      }
-
-      .hero-subtitle {
-        font-size: clamp(1rem, 2.5vw, 1.5rem);
-        font-weight: 400;
-        color: var(--text-secondary);
-        margin-bottom: 1rem;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.4;
-      }
-
-      .hero-location {
-        font-size: clamp(0.8rem, 1.5vw, 1rem);
-        color: var(--text-secondary);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-weight: 600;
-        margin-bottom: 3rem;
-      }
-
-      .hero-cta {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
+      /* Hero Section moved to index.astro using Tailwind */
 
       /* Cat Illustrations */
       .cat-illustrations {
@@ -364,24 +313,8 @@ if (schema) {
 
       /* Mobile Responsive */
       @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-
-        .hero {
-          justify-content: flex-start;
-          padding-top: 8vh; /* baseline for all phones */
-          min-height: 100dvh; /* iOS/Safari fix */
-        }
-
-        .hero-cta {
-          flex-direction: column;
-          align-items: center;
-        }
-
         .cat-illustrations {
-          /* Reduced from 0.2 → 0.15 for better text readability on all devices.
-     Keeps texture visible without overpowering hero heading/subheading. */
+          /* Reduced from 0.2 → 0.15 for better text readability on all devices... */
           opacity: 0.15;
           background-size: 100% auto;
           background-repeat: repeat;
@@ -389,19 +322,9 @@ if (schema) {
         }
       }
 
-      /* Large phones (Pro/Pro Max) */
-      @media (min-width: 430px) and (max-width: 768px) {
-        .hero {
-          padding-top: 10vh; /* pull heading a touch lower */
-        }
-      }
+      /* Large phones (Pro/Pro Max) removed as empty after TW imp[emented */
 
-      /* Tiny phones (SE) */
-      @media (max-width: 375px) {
-        .hero {
-          padding-top: 10vh; /* push heading slightly down */
-        }
-      }
+      /* Tiny phones (SE) removed as empty after TW imp[emented */
 
       /* Blog Post Layout */
       .blog-post-main {
@@ -530,17 +453,18 @@ if (schema) {
     <!-- Navigation - Phase 4: Converted from .nav CSS classes to Tailwind utilities -->
     <!-- Replaces: .nav, .logo, .nav-links, .nav-links a styles from global CSS -->
     <!-- Features: Fixed positioning, backdrop blur, dark mode support, responsive design -->
+    <!-- Updated: Added Pricing link after Services for natural customer flow -->
     <nav
       class="fixed top-0 left-0 right-0 z-[1000] px-8 py-6 flex justify-between items-center
-            backdrop-blur-[20px] bg-[rgba(248,246,240,0.9)]
-            dark:bg-[rgba(26,26,26,0.9)]"
+        backdrop-blur-[20px] bg-[rgba(248,246,240,0.9)]
+        dark:bg-[rgba(26,26,26,0.9)]"
     >
       <!-- Logo: Converted from .logo class -->
       <!-- font-['Barrio'] applies the custom Barrio font family -->
       <a
         href="/"
         class="text-3xl font-black text-[var(--text-primary)] no-underline
-            tracking-[-0.02em] font-['Barrio']"
+        tracking-[-0.02em] font-['Barrio']"
       >
         MAAU MAAU
       </a>
@@ -553,16 +477,25 @@ if (schema) {
           <a
             href="/#services"
             class="text-[var(--text-primary)] no-underline font-medium text-base
-                uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
+            uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
           >
             Services
           </a>
         </li>
         <li>
           <a
+            href="/pricing"
+            class="text-[var(--text-primary)] no-underline font-medium text-base
+            uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
+          >
+            Pricing
+          </a>
+        </li>
+        <li>
+          <a
             href="/#about"
             class="text-[var(--text-primary)] no-underline font-medium text-base
-                uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
+            uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
           >
             About
           </a>
@@ -571,7 +504,7 @@ if (schema) {
           <a
             href="/blog/"
             class="text-[var(--text-primary)] no-underline font-medium text-base
-                uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
+            uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
           >
             Blog
           </a>
@@ -580,7 +513,7 @@ if (schema) {
           <a
             href="/#contact"
             class="text-[var(--text-primary)] no-underline font-medium text-base
-                uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
+            uppercase tracking-[0.05em] hover-smooth hover:opacity-60"
           >
             Contact
           </a>

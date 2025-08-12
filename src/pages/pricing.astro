@@ -1,0 +1,66 @@
+---
+// src/pages/pricing.astro - Quick placeholder using existing Services component
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Services from "../components/Services.astro";
+
+const pageTitle = "Pricing - Professional Cat Sitting Services | MAAU MAAU";
+const pageDescription =
+    "Pricing for professional cat sitting in Manchester & Salford. Quick visits £11, Morning & Evening £18, Overnight stays £40. Holiday rates and extras available.";
+
+export const prerender = true;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <!-- Pricing Page - Temporary placeholder using Services component -->
+    <!-- Will be replaced with detailed pricing after Friday team meeting -->
+
+    <main class="py-24 px-8">
+        <!-- Page Header -->
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <h1
+                class="text-[clamp(2.5rem,8vw,5rem)] font-black leading-[0.9]
+                 mb-6 tracking-[-0.02em] text-[var(--text-primary)]
+                 font-['Barrio']"
+            >
+                OUR PRICING
+            </h1>
+            <p
+                class="text-[clamp(1rem,2vw,1.2rem)] text-[var(--text-secondary)]
+                max-w-2xl mx-auto leading-[1.5]"
+            >
+                Professional cat care with transparent pricing. All rates
+                include VAT and cover Manchester & Salford areas.
+            </p>
+        </div>
+
+        <!-- Services Component - Same as homepage -->
+        <Services />
+
+        <!-- Additional Info Section -->
+        <div class="max-w-4xl mx-auto mt-20 text-center">
+            <div
+                class="bg-[var(--bg-secondary)] border-2 border-[var(--text-primary)] p-8"
+            >
+                <h2
+                    class="text-[clamp(1.5rem,4vw,2.5rem)] font-black mb-6
+                   text-[var(--text-primary)] font-['Barrio']"
+                >
+                    HOLIDAY RATES & BOOKING
+                </h2>
+                <p class="text-lg text-[var(--text-secondary)] mb-6">
+                    Bank holidays and peak periods: Standard rates + 25%
+                    surcharge<br />
+                    Peak periods include: Christmas Day, Boxing Day, New Year's Day,
+                    Easter Sunday
+                </p>
+                <div class="flex gap-4 justify-center flex-wrap">
+                    <a
+                        href="mailto:hello@maaumaau.co.uk"
+                        class="btn btn-primary">EMAIL US</a
+                    >
+                    <a href="/#contact" class="btn">GET QUOTE</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</BaseLayout>

@@ -22,17 +22,61 @@ const pageDescription =
 
   <!-- Fixed CTA Button moved to BaseLayout using Tailwind-->
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- Hero Section - Phase 5: Converted from .hero* CSS classes to Tailwind utilities -->
+  <!-- Replaces: .hero, .hero-content, .hero-title, .hero-subtitle, .hero-location, .hero-cta -->
+  <!-- Features: Responsive typography with clamp(), mobile-specific padding, centered layout -->
+  <section
+    class="min-h-screen flex flex-col justify-start items-center text-center
+                  p-8 relative
+                  pt-[8vh] min-h-[100dvh]
+                  min-[430px]:max-md:pt-[10vh]
+                  max-[375px]:pt-[10vh]
+                  md:justify-center md:pt-8"
+  >
+    <!-- Cat illustrations background - keeping existing class for now -->
     <div class="cat-illustrations"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">YOUR CAT'S HOLIDAY STARTS HERE</h1>
-      <p class="hero-subtitle">
+
+    <!-- Hero content container: Converted from .hero-content -->
+    <!-- max-w-[900px] matches the original 900px max-width -->
+    <div class="max-w-[900px] z-[2]">
+      <!-- Hero title: Converted from .hero-title -->
+      <!-- Uses clamp() for responsive sizing: clamp(3rem, 12vw, 10rem) -->
+      <!-- font-['Barrio'] applies the custom heading font -->
+      <h1
+        class="text-[clamp(3rem,12vw,10rem)] font-black leading-[0.85]
+                 mb-8 tracking-[-0.04em] text-[var(--text-primary)]
+                 font-['Barrio']"
+      >
+        YOUR CAT'S HOLIDAY STARTS HERE
+      </h1>
+
+      <!-- Hero subtitle: Converted from .hero-subtitle -->
+      <!-- Uses clamp() for responsive sizing: clamp(1rem, 2.5vw, 1.5rem) -->
+      <p
+        class="text-[clamp(1rem,2.5vw,1.5rem)] font-normal
+                text-[var(--text-secondary)] mb-4 max-w-[500px]
+                mx-auto leading-[1.4]"
+      >
         We'll spoil your feline while you're away. Professional cat care that
         feels like a luxury pet spa experience.
       </p>
-      <div class="hero-location">Manchester & Salford</div>
-      <div class="hero-cta">
+
+      <!-- Hero location: Converted from .hero-location -->
+      <!-- Uses clamp() for responsive sizing: clamp(0.8rem, 1.5vw, 1rem) -->
+      <div
+        class="text-[clamp(0.8rem,1.5vw,1rem)] text-[var(--text-secondary)]
+                  uppercase tracking-[0.1em] font-semibold mb-12"
+      >
+        Manchester & Salford
+      </div>
+
+      <!-- Hero CTA buttons: Converted from .hero-cta -->
+      <!-- Mobile: flex-col items-center, Desktop: flex-row justify-center -->
+      <div
+        class="flex gap-4 justify-center flex-wrap
+                  md:flex-row md:justify-center
+                  flex-col items-center"
+      >
         <a href="/#contact" class="btn btn-primary">Book Now</a>
         <a href="/#services" class="btn">Our Services</a>
       </div>
