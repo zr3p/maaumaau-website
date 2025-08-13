@@ -63,42 +63,4 @@ export const prerender = true;
             </div>
         </div>
     </main>
-
-    <script>
-        (function () {
-            function show() {
-                const vv = window.visualViewport || {};
-                const msg = [
-                    `inner: ${innerWidth} × ${innerHeight}`,
-                    `screen: ${screen.width} × ${screen.height}`,
-                    `dpr: ${devicePixelRatio}`,
-                    `visualViewport: ${vv.width || "—"} × ${vv.height || "—"}`,
-                ].join(" | ");
-                console.log(msg);
-                document.body.style.paddingTop = "48px";
-                let el =
-                    document.getElementById("vwdebug") ||
-                    document.body.appendChild(
-                        Object.assign(document.createElement("div"), {
-                            id: "vwdebug",
-                        }),
-                    );
-                Object.assign(el.style, {
-                    position: "fixed",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    zIndex: 99999,
-                    font: "14px ui-monospace, SFMono-Regular, monospace",
-                    background: "#0008",
-                    color: "#fff",
-                    padding: "8px",
-                    backdropFilter: "blur(4px)",
-                });
-                el.textContent = msg;
-            }
-            addEventListener("resize", show, { passive: true });
-            addEventListener("load", show, { once: true });
-        })();
-    </script>
 </BaseLayout>
