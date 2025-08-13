@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Bio — MAAU MAAU Cat Sitting";
+const description =
+    "Professional cat sitting services in Manchester & Salford. Book directly for trusted, reliable pet care.";
+---
+
+<BaseLayout title={title} description={description}>
+    <main class="min-h-screen bg-[var(--bg-primary)] pt-24 pb-12">
+        <div class="max-w-md mx-auto px-6">
+            <!-- Hero Identity -->
+            <div class="text-center mb-8">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full bg-[var(--text-primary)] flex items-center justify-center"
+                >
+                    <img
+                        src="/cat-menu-icon.svg"
+                        alt="Cat icon"
+                        class="w-16 h-16 filter invert"
+                    />
+                </div>
+                <h1 class="text-2xl font-['Barrio'] font-black mb-2">
+                    MAAU MAAU
+                </h1>
+                <p class="text-[var(--text-secondary)] text-sm">
+                    Professional Cat Sitting • Manchester & Salford
+                </p>
+            </div>
+
+            <!-- Book Now button - change to match site -->
+            <a
+                href="/#contact?utm_source=bio&utm_medium=primary_cta&utm_campaign=book_now"
+                class="block w-full bg-[var(--text-primary)] text-[var(--bg-primary)] text-center px-6 py-4 rounded-xl font-bold text-lg mb-4 hover:opacity-90 transition-opacity"
+            >
+                📅 BOOK CAT SITTING NOW
+            </a>
+
+            <!-- SECONDARY CTA - Call (urgent but smaller) -->
+            <a
+                href="tel:+447400481571"
+                class="block w-full border-2 border-[var(--text-primary)] text-[var(--text-primary)] text-center px-6 py-3 rounded-xl font-semibold mb-3 hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-all"
+            >
+                📞 Call: 07400 481 571
+            </a>
+
+            <!-- WHATSAPP CTA - Direct messaging -->
+            <a
+                href="https://wa.me/447400481571?text=Hi!%20I%27d%20like%20to%20book%20cat%20sitting&utm_source=bio&utm_medium=whatsapp_cta&utm_campaign=message"
+                class="block w-full bg-green-500 text-white text-center px-6 py-3 rounded-xl font-semibold mb-6 hover:bg-green-600 transition-all"
+            >
+                💬 WhatsApp: Quick Message
+            </a>
+
+            <!-- Why Choose Us - point to about -->
+            <a
+                href="/#about?utm_source=bio&utm_medium=social_proof&utm_campaign=about"
+                class="block w-full bg-[var(--bg-secondary)] border border-[var(--text-secondary)] text-[var(--text-primary)] text-center px-6 py-3 rounded-xl font-medium mb-3 hover:border-[var(--text-primary)] transition-all"
+            >
+                ⭐ Why Choose Us? (Reviews & Info)
+            </a>
+
+            <!-- SOCIAL LINKS - Lower priority -->
+            <div class="space-y-2">
+                <a
+                    href="https://tiktok.com/@maau.maau.cat.sit?utm_source=bio&utm_medium=social&utm_campaign=tiktok"
+                    class="block w-full bg-[var(--bg-secondary)] text-[var(--text-primary)] text-center px-6 py-3 rounded-lg font-medium hover:bg-[var(--text-secondary)] hover:text-[var(--bg-primary)] transition-all"
+                >
+                    🎵 TikTok: Cat Care Tips
+                </a>
+
+                <a
+                    href="https://www.instagram.com/maau.maau.cat.sit/?utm_source=bio&utm_medium=social&utm_campaign=instagram"
+                    class="block w-full bg-[var(--bg-secondary)] text-[var(--text-primary)] text-center px-6 py-3 rounded-lg font-medium hover:bg-[var(--text-secondary)] hover:text-[var(--bg-primary)] transition-all"
+                >
+                    📸 Instagram: Happy Cats
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@maaumaaucatsitting?utm_source=bio&utm_medium=social&utm_campaign=youtube"
+                    class="block w-full bg-[var(--bg-secondary)] text-[var(--text-primary)] text-center px-6 py-3 rounded-lg font-medium hover:bg-[var(--text-secondary)] hover:text-[var(--bg-primary)] transition-all"
+                >
+                    📺 YouTube: Behind the Scenes
+                </a>
+            </div>
+        </div>
+    </main>
+</BaseLayout>
