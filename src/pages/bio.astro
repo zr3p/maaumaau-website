@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "Bio — MAAU MAAU Cat Sitting";
+const title = "Bio -- MAAU MAAU Cat Sitting";
+
 const description =
     "Professional cat sitting services in Manchester & Salford. Book directly for trusted, reliable pet care.";
 ---
@@ -10,25 +11,43 @@ const description =
     <main class="min-h-screen bg-[var(--bg-primary)] pt-24 pb-12">
         <div class="max-w-md mx-auto px-6">
             <!-- Hero Identity -->
+
+            <!-- 
+🐱 ICON CUSTOMIZATION NOTES:
+To use the detailed whiskers cat icon later:
+
+1. Replace src="/favicon.svg" with src="/blk-whiskers-mm-icon.svg"
+2. Add back filter invert: class="w-16 h-16 filter invert"
+3. To fix spacing between icon and heading, adjust mb-4:
+   - Less space: change mb-4 to mb-2 or mb-1
+   - More space: change mb-4 to mb-6 or mb-8
+4. May need to adjust icon size if it looks too big/small:
+   - Smaller: w-14 h-14 or w-12 h-12
+   - Larger: w-18 h-18 or w-20 h-20
+
+Current setup uses optimized favicon.svg (2KB) for speed.
+Whiskers version (blk-whiskers-mm-icon.svg) has more detail but larger file size.
+Whiskers matter! 🐾
+-->
+
             <div class="text-center mb-8">
                 <div
                     class="w-24 h-24 mx-auto mb-4 rounded-full bg-[var(--text-primary)] flex items-center justify-center"
                 >
-                    <img
-                        src="/cat-menu-icon.svg"
-                        alt="Cat icon"
-                        class="w-16 h-16 filter invert"
-                    />
+                    <img src="/favicon.svg" alt="Cat icon" class="w-16 h-16" />
                 </div>
+
                 <h1 class="text-2xl font-['Barrio'] font-black mb-2">
                     MAAU MAAU
                 </h1>
+
                 <p class="text-[var(--text-secondary)] text-sm">
                     Professional Cat Sitting • Manchester & Salford
                 </p>
             </div>
 
             <!-- Book Now button - change to match site -->
+
             <a
                 href="/#contact?utm_source=bio&utm_medium=primary_cta&utm_campaign=book_now"
                 class="block w-full bg-[var(--text-primary)] text-[var(--bg-primary)] text-center px-6 py-4 rounded-xl font-bold text-lg mb-4 hover:opacity-90 transition-opacity"
@@ -37,6 +56,7 @@ const description =
             </a>
 
             <!-- SECONDARY CTA - Call (urgent but smaller) -->
+
             <a
                 href="tel:+447400481571"
                 class="block w-full border-2 border-[var(--text-primary)] text-[var(--text-primary)] text-center px-6 py-3 rounded-xl font-semibold mb-3 hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-all"
@@ -45,6 +65,7 @@ const description =
             </a>
 
             <!-- WHATSAPP CTA - Direct messaging -->
+
             <a
                 href="https://wa.me/447400481571?text=Hi!%20I%27d%20like%20to%20book%20cat%20sitting&utm_source=bio&utm_medium=whatsapp_cta&utm_campaign=message"
                 class="block w-full bg-green-500 text-white text-center px-6 py-3 rounded-xl font-semibold mb-6 hover:bg-green-600 transition-all"
@@ -53,6 +74,7 @@ const description =
             </a>
 
             <!-- Why Choose Us - point to about -->
+
             <a
                 href="/#about?utm_source=bio&utm_medium=social_proof&utm_campaign=about"
                 class="block w-full bg-[var(--bg-secondary)] border border-[var(--text-secondary)] text-[var(--text-primary)] text-center px-6 py-3 rounded-xl font-medium mb-3 hover:border-[var(--text-primary)] transition-all"
@@ -61,6 +83,7 @@ const description =
             </a>
 
             <!-- SOCIAL LINKS - Lower priority -->
+
             <div class="space-y-2">
                 <a
                     href="https://tiktok.com/@maau.maau.cat.sit?utm_source=bio&utm_medium=social&utm_campaign=tiktok"
